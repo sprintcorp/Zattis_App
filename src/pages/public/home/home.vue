@@ -118,7 +118,7 @@
                                 
                                 </b-card-text>
 
-                                <b-button href="#" variant="info">View</b-button>
+                                <b-button :to="{name:'property',params:{id:1}}" variant="info">View</b-button>
                             </b-card>
                             <b-card
                                 title="Duplex for sale"
@@ -133,7 +133,7 @@
                                 
                                 </b-card-text>
 
-                                <b-button href="#" variant="info">View</b-button>
+                                <b-button :to="{name:'property',params:{id:2}}" variant="info">View</b-button>
                             </b-card>
                         </b-card-group>
                             

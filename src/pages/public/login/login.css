@@ -6,7 +6,7 @@
 CSS used here will be applied after bootstrap.css */
 
 .login-background {
-    background: url('https://www.uniper.energy/sites/default/files/gif%20home_reduced.gif') no-repeat center center fixed;
+    background: url('../../../../public/bg.gif') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
