@@ -1,0 +1,14 @@
+.banner {
+    background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&w=1000&q=80') no-repeat center center/cover;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.list-color {
+    background-color: azure;
+}
+
+li {
+    list-style: none;
+}

@@ -1,0 +1,29 @@
+/* .login-background {
+    background-image: url('https://i-cdn.phonearena.com/images/articles/317951-image/cinemagraphs.gif');
+    background-repeat: no-repeat;
+}
+
+CSS used here will be applied after bootstrap.css */
+
+.login-background {
+    background: url('https://www.uniper.energy/sites/default/files/gif%20home_reduced.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    /* opacity: 0.8; */
+}
+
+.enableBlur>* {
+    filter: blur(1.2px);
+}
+
+.disableBlur {
+    filter: blur(0);
+}
+
+.text {
+    color: white
+}
