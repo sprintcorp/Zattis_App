@@ -6,16 +6,14 @@
                     <b-row class="justify-content-center" style="position:absolute;top:70%;left:16%;width:70%;">                        
                         <b-col sm="12" md="12" align-self="center">
                             <b-input-group>
-                                <!-- <b-dropdown size="lg"  variant="link" toggle-class="text-decoration-none" no-caret>
-                                    <template v-slot:button-content>
-                                    &#x1f50d;<span class="sr-only">Search</span>
-                                    </template>
-                                    <b-dropdown-item href="#">Action</b-dropdown-item>
-                                    <b-dropdown-item href="#">Another action</b-dropdown-item>
-                                    <b-dropdown-item href="#">Something else here...</b-dropdown-item>
-                                </b-dropdown> -->
+                               <template v-slot:prepend>
+                                    <b-dropdown variant="info" v-model="option">                                        
+                                        <b-dropdown-item>Rent</b-dropdown-item>
+                                        <b-dropdown-item>Sale</b-dropdown-item>
+                                    </b-dropdown>
+                                </template>
                                 
-                                <b-form-input  placeholder="Example: Lagos, Ikeja, Shomolu" v-model="place"></b-form-input>
+                                <b-form-input placeholder="Example: Lagos, Ikeja, Shomolu" v-model="place"></b-form-input>
                                 <b-input-group-prepend>
                                     <span class="input-group-text"><b-icon-search></b-icon-search></span>
                                 </b-input-group-prepend>

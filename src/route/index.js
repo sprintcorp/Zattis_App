@@ -14,6 +14,18 @@ const router = new VueRouter({
                 import ('../pages/public/login/login.vue'),
             name: 'login',
         },
+        {
+            path: '/register',
+            component: () =>
+                import ('../pages/public/register/register.vue'),
+            name: 'register',
+        },
+        {
+            path: '/recover-password',
+            component: () =>
+                import ('../pages/public/forgot-password/password.vue'),
+            name: 'reset-password',
+        },
 
         {
             path: '/',
@@ -46,5 +58,5 @@ const router = new VueRouter({
             ]
         }
     ]
-})
+});
 export default router;

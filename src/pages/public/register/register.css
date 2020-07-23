@@ -18,5 +18,11 @@
 }
 
 .text {
-    color: white
+    color: white;
+}
+
+.vertical-center {
+    position: absolute;
+    top: 18%;
+    width: 450px;
 }

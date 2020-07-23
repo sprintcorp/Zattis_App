@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid login-background">
         <b-container>
-        <b-row sm="12" md="12" style="position:absolute;top:30%;">                        
+        <b-row sm="12" md="12" class="vertical-center">                        
             <b-col offset-md="9" offset-sm="0" style="align-items: center;" sm="12" md="12" align-self="center">
 
                 <b-card style="background: rgba(0,0,0,.1)">
@@ -14,20 +14,13 @@
                         </b-input-group-prepend>                                    
                         <b-form-input type="text" placeholder="Someone@mail.com" v-model="username"></b-form-input>
                     </b-input-group>                   
-                    <b-input-group class="mb-4" sm="12" md="12">                                
-                        <b-input-group-prepend>
-                                        <span class="input-group-text"><b-icon-lock-fill></b-icon-lock-fill></span>
-                        </b-input-group-prepend>                                    
-                        <b-form-input type="password" placeholder="********" v-model="password"></b-form-input>
-                    </b-input-group>
-                    <b-button class="btn-block btn-info mb-2">LOGIN</b-button>                   
+                    
+                    <b-button class="btn-block btn-info mb-2">GET RESET LINK</b-button>                   
                     <b-row md="12" sm="12">
-                        <b-col md="6" >
-                           <b-link style="text-decoration:none" :to="{name:'reset-password'}"><h6 class="text"> FORGOT PASSWORD?</h6></b-link>
+                        <b-col md="12" class="text-center">
+                          <b-link style="text-decoration:none" :to="{name:'login'}"> <h6 class="text"> GO BACK TO LOGIN PAGE</h6></b-link>
                         </b-col>
-                        <b-col md="6">
-                        <b-link style="text-decoration:none" :to="{name:'register'}"><h6 class="text">NEW USER REGISTER</h6></b-link>
-                        </b-col>
+                       
                     </b-row>
                 
                 </b-card>
@@ -38,9 +31,9 @@
 </template>
 
 <style scoped>
-    @import './login.css'
+    @import './password.css'
 </style>
 
-<script src="./login.js">
+<script src="./password.js">
 
 </script>
