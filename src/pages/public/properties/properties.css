@@ -1,6 +1,17 @@
 .header {
     /* height: 0vh; */
-    background-color: #e6e2e2;
+    background-color: #E0F7FA;
     position: relative;
     overflow: hidden;
+}
+
+.products_items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.b-card {
+    width: 100%;
+    margin-bottom: 20px;
 }

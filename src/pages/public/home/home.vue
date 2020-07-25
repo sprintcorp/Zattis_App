@@ -66,26 +66,52 @@
                 </b-container>
             </section>
         </div>
+    
+        <b-container class="mt-3 mb-3 list-info p-5" md="12" sm="12" v-scroll-reveal="{delay:500}">
+            <b-row>
+                <b-col md="4" sm="4" class="text-center"> 
+            <!-- <transition
+                v-on:before-enter="beforeEnter"
+                v-on:enter="enter"
+                appear
+            >                    -->
+                   <div class="h1"> <animate-number from="1" to="2300" duration="6000" easing="easeOutQuad"></animate-number></div>
+                   <p>Properties</p>
+            <!-- </transition> -->
+                   
+
+                </b-col>
+                <b-col md="4" sm="4" class="text-center">                    
+                   <div class="h1">  <div class="h1"> <animate-number from="1" to="56" duration="3000" easing="easeOutQuad"></animate-number></div></div>
+                   <p>Agents</p>
+                </b-col>
+                <b-col md="4" sm="4" class="text-center">                    
+                   <div class="h1">  <div class="h1"> <animate-number from="1" to="345" duration="4000" easing="easeOutQuad"></animate-number></div></div>
+                   <p>Users</p>
+                </b-col>
+            </b-row>
+        </b-container>
+       
         <div class="p-5">
             <section>
-                <b-row sm="12" md="12">
+                <b-row sm="12" md="12" v-scroll-reveal="{delay:800}">
                     <b-col sm="12" md="5" offset-md="1">
                         <div class="row mb-5">
                             <div class=""><h4>Categories</h4></div>
                             <div class="text-justify">
-                                <a class="mr-3" style="color:black" >Villa for sale</a>
-                                <a class="mr-3" style="color:black" >Land For Sale</a>
-                                <a class="mr-3" style="color:black" >2 Bedroom flat for rent</a>
-                                <a class="mr-3" style="color:black" >3 Bedroom flat for rent</a>
-                                <a class="mr-3" style="color:black" >Duplex for sale</a>
-                                <a class="mr-3" style="color:black" >Duplex for rent</a>
-                                <a class="mr-3" style="color:black" >Office space for sale</a>
-                                <a class="mr-3" style="color:black" >Office space for rent</a>
-                                <a class="mr-3" style="color:black" >Shop for sale</a>
-                                <a class="mr-3" style="color:black" >Shop for rent</a>
-                                <a class="mr-3" style="color:black" >Warehouse for sale</a>
-                                <a class="mr-3" style="color:black" >Warehouse for rent</a>
-                                <a class="mr-3" style="color:black"> House for sale</a>
+                                <a class="mr-3" style="color:black" ><b-badge>Villa for sale</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Land For Sale</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>2 Bedroom flat for rent</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>3 Bedroom flat for rent</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Duplex for sale</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Duplex for rent</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Office space for sale</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Office space for rent</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Shop for sale</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Shop for rent</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Warehouse for sale</b-badge></a>
+                                <a class="mr-3" style="color:black" ><b-badge>Warehouse for rent</b-badge></a>
+                                <a class="mr-3" style="color:black"> <b-badge>House for sale</b-badge></a>
                             </div>
                         </div>
                         <div class="row">

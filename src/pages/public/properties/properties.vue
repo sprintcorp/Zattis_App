@@ -50,7 +50,8 @@
                                 img-top
                                 tag="article"
                                 style="max-width: 20rem;"
-                                class="m-3"
+                                class="m-3 products_items b-card"
+                                v-scroll-reveal="{delay:100}"
                                 
                             >
                                 <b-card-text>

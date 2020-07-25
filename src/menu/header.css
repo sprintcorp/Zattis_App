@@ -2,4 +2,10 @@
     position: sticky;
     top: 0;
     z-index: 1071;
+    background-color: #01579B;
+    color: white;
+}
+
+.text {
+    color: white;
 }
