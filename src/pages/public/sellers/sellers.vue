@@ -19,14 +19,13 @@
                         >
                             <b-card
                                 title="Users"
-                                img-src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-1.2.1&w=1000&q=80"
+                                img-src="https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/profile_user.jpg"
                                 img-alt="Image"
                                 img-top
                                 tag="article"
                                 style="max-width: 20rem;"
                                 class="m-3"
-                                v-scroll-reveal="{delay:100}"
-                                
+                                v-scroll-reveal="{delay:100}"                                
                             >
                                 <b-card-text>
                                     

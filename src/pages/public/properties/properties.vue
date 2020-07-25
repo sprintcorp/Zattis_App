@@ -32,7 +32,7 @@
 
                         <label>Location</label>
                         <b-form-input v-model="location" placeholder="Ikeja or Baruwa"></b-form-input>
-                        <b-button variant="info" class="mt-3 text-right">Search <b-icon-search></b-icon-search></b-button>
+                        <b-button variant="info" class="mt-3 text-right">Filter Search</b-button>
 
                         
                     </div>
@@ -45,7 +45,7 @@
                         >
                             <b-card
                                 title="Inn For sale"
-                                img-src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-1.2.1&w=1000&q=80"
+                                img-src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&w=1000&q=80"
                                 img-alt="Image"
                                 img-top
                                 tag="article"

@@ -7,9 +7,10 @@
 
             <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="m-auto text-light">
-                <b-nav-item :to="{name:'properties'}">Property Prices</b-nav-item>
-                <b-nav-item :to="{name:'sellers'}">Sellers</b-nav-item>
-                <b-nav-item href="#" @click="displaySearchForm">Search</b-nav-item>
+                <b-nav-item :to="{name:'home'}">Zattis Home </b-nav-item>
+                <b-nav-item :to="{name:'properties'}">Zattis Properties </b-nav-item>
+                <b-nav-item :to="{name:'sellers'}">Zattis Agents</b-nav-item>
+                <!-- <b-nav-item href="#" @click="displaySearchForm">Search</b-nav-item> -->
             </b-navbar-nav>
 
             <!-- Right aligned nav items -->
