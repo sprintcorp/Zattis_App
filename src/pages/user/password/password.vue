@@ -9,7 +9,7 @@
                     <b-col md="3">
                         <b-list-group flush class="text-center">
                             <b-list-group-item class="h4" :to="{name:'user'}"><b-icon-house></b-icon-house> Dashboard</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'userProperty'}"><b-icon-house></b-icon-house> My Property</b-list-group-item>
+                            <b-list-group-item class="h4" :to="{name:'userProperty'}"><b-icon-heart></b-icon-heart> My Property</b-list-group-item>
                             <b-list-group-item class="h4" :to="{name:'userProfile'}"><b-icon-person></b-icon-person> My Profile</b-list-group-item>
                           
                         </b-list-group>
