@@ -1,4 +1,4 @@
-import Header from '../../menu/public/header.vue';
+import Header from '../../menu/user/header.vue';
 import Footer from '../../footer/footer.vue';
 export
 default {

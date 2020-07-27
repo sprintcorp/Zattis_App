@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="body">
         <div class="header pt-2 pl-5">
             <div class="h3" style="color:black">Properties on Zattis Properties</div>
         </div>

@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+.body {
+    min-height: 81vh;
+}
+
 .list-color {
     background-color: azure;
 }

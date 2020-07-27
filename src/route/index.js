@@ -32,7 +32,7 @@ const router = new VueRouter({
             component: () =>
                 import ('../layout/public/layout.vue'),
             redirect: {
-                name: 'Home'
+                name: 'home'
             },
             children: [{
                     path: '/',
@@ -68,6 +68,37 @@ const router = new VueRouter({
                 }
 
             ]
+        },
+        {
+
+            path: '/user',
+            component: () =>
+                import ('../layout/user/layout.vue'),
+            redirect: {
+                name: 'user'
+            },
+            children: [{
+                path: '/user',
+                component: () =>
+                    import ('../pages/user/dashboard/dashboard.vue'),
+                name: 'user'
+            }, {
+                path: 'saved-property',
+                component: () =>
+                    import ('../pages/user/properties/properties.vue'),
+                name: 'userProperty'
+            }, {
+                path: 'profile',
+                component: () =>
+                    import ('../pages/user/profile/profile.vue'),
+                name: 'userProfile'
+            }, {
+                path: 'password',
+                component: () =>
+                    import ('../pages/user/password/password.vue'),
+                name: 'userPassword'
+            }]
+
         }
     ]
 });

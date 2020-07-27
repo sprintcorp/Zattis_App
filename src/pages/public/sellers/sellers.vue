@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="body">
          <div class="header p-3">
             <b-row>
                 <b-col class="m-auto" sm="6" md="6" align-self="center">

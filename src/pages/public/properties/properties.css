@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+.body {
+    min-height: 81vh;
+}
+
 .products_items {
     display: flex;
     justify-content: space-between;
