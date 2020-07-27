@@ -27,7 +27,7 @@
                     <span class="mr-auto">J. Circlehead</span>
                     </template>
                     <!-- <b-badge>5</b-badge> -->
-                    <b-dropdown-item>Profile</b-dropdown-item>
+                    <b-dropdown-item :to="{name:'userProfile'}">Profile</b-dropdown-item>
                     <b-dropdown-item :to="{name:'login'}">Logout</b-dropdown-item>
                 </b-nav-item-dropdown>
                
