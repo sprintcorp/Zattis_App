@@ -7,14 +7,15 @@
             <b-card style="width:100%">
                  <b-row md="12">
                     <b-col md="3">
-                        <b-list-group flush class="text-center">
-                            <b-list-group-item class="h4" :to="{name:'user'}"><b-icon-house></b-icon-house> Dashboard</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'userProperty'}"><b-icon-heart></b-icon-heart> My Property</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'userPassword'}"><b-icon-lock></b-icon-lock> Password</b-list-group-item>
+                        <b-list-group flush class="">
+                            <b-list-group-item class="h4" :to="{name:'agent'}"><b-icon-box></b-icon-box> Dashboard</b-list-group-item>
+                            <b-list-group-item class="h4" :to="{name:'createProperty'}"><b-icon-plus></b-icon-plus> Add Property</b-list-group-item>
+                            <b-list-group-item class="h4" :to="{name:'agentProperties'}"><b-icon-house></b-icon-house> My Property</b-list-group-item>
+                            <b-list-group-item class="h4" :to="{name:'agentPassword'}"><b-icon-lock></b-icon-lock>My Password</b-list-group-item>
                           
                         </b-list-group>
                     </b-col>
-                     <b-col md="3">
+                    <b-col md="3">
                         <div class="text-center">
                             <b-img :src="profile_image" class="mb-2 " height="300px" width="280px"></b-img>
                         </div>

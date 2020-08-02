@@ -99,6 +99,48 @@ const router = new VueRouter({
                 name: 'userPassword'
             }]
 
+        },
+        {
+            path: '/agent',
+            component: () =>
+                import ('../layout/agent/layout.vue'),
+            redirect: {
+                name: 'agent'
+            },
+            children: [{
+                    path: '/agent',
+                    component: () =>
+                        import ('../pages/agent/dashboard/dashboard.vue'),
+                    name: 'agent'
+                }, {
+                    path: 'property',
+                    component: () =>
+                        import ('../pages/agent/properties/properties.vue'),
+                    name: 'agentProperties'
+                }, {
+                    path: 'profile',
+                    component: () =>
+                        import ('../pages/agent/profile/profile.vue'),
+                    name: 'agentProfile'
+                },
+                {
+                    path: 'password',
+                    component: () =>
+                        import ('../pages/agent/password/password.vue'),
+                    name: 'agentPassword'
+                },
+                {
+                    path: 'create',
+                    component: () =>
+                        import ('../pages/agent/create/create.vue'),
+                    name: 'createProperty'
+                }, {
+                    path: 'my-property/:id',
+                    component: () =>
+                        import ('../pages/agent/property/property.vue'),
+                    name: 'agentProperty'
+                }
+            ]
         }
     ]
 });
