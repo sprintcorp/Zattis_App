@@ -3,20 +3,13 @@
         <div class="header p-2 pl-5">
             <div class="h6" style="color:black"><b-icon-house></b-icon-house> John Doe - My Profile</div>
         </div>
-        <b-container fluid  class="mt-5 p-3">
+        <b-container  class="mt-5 p-3">
             <b-card style="width:100%">
                  <b-row md="12">
-                    <b-col md="3">
-                        <b-list-group flush class="text-center">
-                            <b-list-group-item class="h4" :to="{name:'user'}"><b-icon-house></b-icon-house> Dashboard</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'userProperty'}"><b-icon-heart></b-icon-heart> My Property</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'userPassword'}"><b-icon-lock></b-icon-lock> Password</b-list-group-item>
-                          
-                        </b-list-group>
-                    </b-col>
+                    
                      <b-col md="3">
                         <div class="text-center">
-                            <b-img :src="profile_image" class="mb-2 " height="300px" width="280px"></b-img>
+                            <b-img :src="profile_image" class="mb-2 " height="260px" width="240px"></b-img>
                         </div>
                         <b-row md="12">
                             <input id="fileUpload" type="file" @change="fileChange()" hidden>
@@ -26,8 +19,9 @@
                             
                         </b-row>
                     </b-col>
+                    <b-col md="1"></b-col>
 
-                    <b-col>
+                    <b-col md="8">
                         <b-row class="my-2 mb-3">
                             <b-col sm="2">
                             <label for="input-default">Firstname:</label>

@@ -3,18 +3,9 @@
          <div class="header p-2 pl-5">
             <div class="h6" style="color:black"><b-icon-house></b-icon-house> John Doe - Security Settings</div>
         </div>
-         <b-container fluid  class="mt-5 p-3">
+         <b-container  class="mt-5 p-3">
             <b-card style="width:100%">
-                 <b-row md="12">
-                    <b-col md="3">
-                        <b-list-group flush class="text-center">
-                            <b-list-group-item class="h4" :to="{name:'user'}"><b-icon-house></b-icon-house> Dashboard</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'userProperty'}"><b-icon-heart></b-icon-heart> My Property</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'userProfile'}"><b-icon-person></b-icon-person> My Profile</b-list-group-item>
-                          
-                        </b-list-group>
-                    </b-col>
-                   
+                 <b-row md="12">                   
 
                     <b-col>
                         <b-row class="my-2 mb-3">

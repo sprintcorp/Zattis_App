@@ -3,12 +3,10 @@
         <div class="header pt-2 pl-5">
             <div class="h3" style="color:black">Properties on Zattis Properties</div>
         </div>
-        <b-container>
         <b-row class="p-5">
-            
-            <b-col md="12" sm="12">
+            <b-col md="8" sm="12">
                 <div class="mb-3">
-                    <b-btn :to="{name:'agentProperties'}" variant="outline-info"><b-icon-arrow-bar-left></b-icon-arrow-bar-left> Back</b-btn>
+                    <b-btn :to="{name:'allProperties'}" variant="outline-info"><b-icon-arrow-bar-left></b-icon-arrow-bar-left> Back</b-btn>
                     
                 </div>
                 <div> 
@@ -88,8 +86,26 @@
 
 
             </b-col>
+            <b-col md="3" sm="12">
+                <div class="h4">Other Properties</div>
+                   <div class="mb-4" v-for="(i,index) in 8" :key="index">
+                        <b-card no-body class="overflow-hidden" style="max-width: 540px;">
+                            <b-row no-gutters>
+                            <b-col md="4">
+                                <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+                            </b-col>
+                            <b-col md="8">
+                                <b-card-body>
+                                <b-card-text>
+                                    <h5>House for sale</h5>
+                                </b-card-text>
+                                </b-card-body>
+                            </b-col>
+                            </b-row>
+                        </b-card>
+                     </div>
+            </b-col>
         </b-row>
-        </b-container>
     </div>
 </template>
 

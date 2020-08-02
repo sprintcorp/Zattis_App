@@ -1,7 +1,9 @@
 <template>
     <div class="body">
          <div class="header p-3">
-            <b-row class="p-5">
+           
+         </div>
+          <b-row class="p-5">
                 <b-col sm="8" md="3">
                       <div>
                     <b-card
@@ -60,22 +62,22 @@
                                     
                                 </b-card-text>
 
-                                <b-button :to="{name:'property',params:{id:index}}" variant="info">View</b-button>
+                                <b-button :to="{name:'singleProperty',params:{id:index}}" variant="info">View</b-button>
                             </b-card>
                             </tr>
                        
             </b-row>
                 </b-col>     
             </b-row>
-         </div>
     </div>
 </template>
 
 <style scoped>
-    @import url("./seller.css");
+    @import url("./agent.css");
 </style>
 
-<script src="./seller.js">
+<script src="./agent.js">
 
 </script>
+
          

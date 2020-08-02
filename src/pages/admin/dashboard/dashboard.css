@@ -1,0 +1,27 @@
+.body {
+    min-height: 81vh;
+}
+
+.header {
+    /* height: 0vh; */
+    background-color: #E0F7FA;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-design {
+    width: 100%;
+    text-align: center;
+    border: 0px;
+    color: #006978;
+}
+
+.card-design:hover {
+    background: #0097a7;
+    color: white;
+    text-decoration: none;
+}
+
+b-link {
+    text-decoration: none;
+}

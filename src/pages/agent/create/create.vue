@@ -4,18 +4,10 @@
             <div class="h6" style="color:black"><b-icon-house></b-icon-house> Welcome John Doe - Create Property</div>
         </div>
 
-        <b-container fluid>
+        <b-container>
             <b-card style="width:100%;border:0px">
                  <b-row md="12">
-                    <b-col md="3">
-                        <b-list-group flush class="">
-                            <b-list-group-item class="h4" :to="{name:'agent'}"><b-icon-box></b-icon-box> Dashboard</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'agentProfile'}"><b-icon-person></b-icon-person> My Profile</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'agentProperties'}"><b-icon-house></b-icon-house> My Property</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'agentPassword'}"><b-icon-lock></b-icon-lock>My Password</b-list-group-item>
-                          
-                        </b-list-group>
-                    </b-col>
+                    
                     <!-- <b-col md="3">
                         <div class="text-center">
                             <div @click="chooseFiles()"><b-card class="mb-2"  height="300px" width="280px"></b-card></div>
@@ -33,7 +25,7 @@
                         </b-row>
                     </b-col> -->
 
-                    <b-col md="8">
+                    <b-col md="12">
                         <b-row class="my-2 mb-3">
                             <b-col sm="2">
                             <label for="input-default">Name:</label>

@@ -3,10 +3,9 @@
          <div class="header p-2 pl-5">
             <div class="h6" style="color:black"><b-icon-house></b-icon-house> John Doe - Security Settings</div>
         </div>
-         <b-container class="mt-5 p-3">
+         <b-container  class="mt-5 p-3">
             <b-card style="width:100%">
-                 <b-row md="12">
-                                      
+                 <b-row md="12">                
 
                     <b-col>
                         <b-row class="my-2 mb-3">
@@ -33,7 +32,7 @@
                             <b-form-input type="password" id="input-default" placeholder="Confirm Password"></b-form-input>
                             </b-col>
                         </b-row>
-                        <b-row>
+                         <b-row>
                             <b-button class="btn-block" variant="info">UPDATE</b-button>
                         </b-row>
 

@@ -141,6 +141,54 @@ const router = new VueRouter({
                     name: 'agentProperty'
                 }
             ]
+        }, {
+            path: '/admin',
+            component: () =>
+                import ('../layout/admin/layout.vue'),
+            redirect: {
+                name: 'admin'
+            },
+            children: [{
+                path: '/admin',
+                component: () =>
+                    import ('../pages/admin/dashboard/dashboard.vue'),
+                name: 'admin'
+            }, {
+                path: 'users',
+                component: () =>
+                    import ('../pages/admin/users/users.vue'),
+                name: 'users'
+            }, {
+                path: 'agents',
+                component: () =>
+                    import ('../pages/admin/agents/agents.vue'),
+                name: 'agents'
+            }, {
+                path: 'agents/:id',
+                component: () =>
+                    import ('../pages/admin/agents/agent/agent.vue'),
+                name: 'agentDetails'
+            }, {
+                path: 'properties',
+                component: () =>
+                    import ('../pages/admin/properties/properties.vue'),
+                name: 'allProperties'
+            }, {
+                path: 'properties/:id',
+                component: () =>
+                    import ('../pages/admin/properties/property/property.vue'),
+                name: 'singleProperty'
+            }, {
+                path: 'profile',
+                component: () =>
+                    import ('../pages/admin/profile/profile.vue'),
+                name: 'adminProfile'
+            }, {
+                path: 'password',
+                component: () =>
+                    import ('../pages/admin/password/password.vue'),
+                name: 'adminPassword'
+            }]
         }
     ]
 });
