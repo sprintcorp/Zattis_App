@@ -12,12 +12,14 @@ import VueScrollReveal from 'vue-scroll-reveal';
 import * as VueGoogleMaps from 'vue2-google-maps'
 import store from './store';
 import { componentRegistry } from "./registry/registry";
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 // installComponents: true,
 componentRegistry(Vue);
 Vue.config.productionTip = false
     // Vue.use(x5GMaps, { key: 'AIzaSyBRqU75XYMpXNvbUW0PiMiHdL2_VTTbG0s', libraries: ['places'] })
-
+Vue.use(AOS);
 Vue.use(VueGoogleMaps, {
     load: {
         key: 'AIzaSyBoBBlVq94q_IEDd0uoTvDoOZp1FSemMgw',

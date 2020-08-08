@@ -99,11 +99,11 @@
             <div class="section-color">
                 <b-container fluid>
                     <b-row md="12" class="p-5">
-                        <b-col md="6" class="ml-5 mr-5">
-                            <div style="font-size:40px">Are you an estate agent or developer? List your property for FREE.</div>
+                        <b-col md="6" class="ml-5 mr-5" v-scroll-reveal="{delay:600,scale:2}">
+                            <div style="font-size:40px;color:white;">Are you an estate agent or developer? List your property for FREE.</div>
                         </b-col>
-                        <b-col md="4">
-                            <b-img src="https://res.cloudinary.com/sprintcorp/image/upload/v1596839929/zattis/SVG/Asset_16_orgwfj.svg"></b-img>
+                        <b-col md="4" v-scroll-reveal="{delay:800,scale:2}">
+                            <b-img src="https://res.cloudinary.com/sprintcorp/image/upload/v1596839935/zattis/SVG/Asset_15_g1lrou.svg"></b-img>
                         </b-col>
                     </b-row>
                 </b-container>  
