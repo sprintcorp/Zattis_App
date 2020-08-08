@@ -45,7 +45,11 @@
                             
                         </div>
                     </template>
+                    
                 </b-card>
+                <div>
+                    <b-img v-bind="mainProps" src="https://res.cloudinary.com/sprintcorp/image/upload/v1596838857/zattis/Homin_Property.ng_Logo_2_akazty.jpg"></b-img>
+                </div>
             </b-col>
             <b-col sm="12" md="9" v-if="!loading && houses.length">
                 <!-- <pre>{{houses}}</pre> -->
@@ -53,7 +57,7 @@
                             <tr v-for="(house,index) in houses" :key="index"
                             >
                                 <b-card
-                                    :title=house.name
+                                    :title=strLn(house.name)
                                     :img-src=house.image[1]
                                     img-alt="Image"
                                     img-top

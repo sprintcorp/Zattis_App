@@ -11,6 +11,7 @@ export default {
             location: "",
             url: "",
             message: "",
+            mainProps: { width: 330, height: 500, class: 'm1' },
             min_options: [
                 { value: '50000', text: '₦50,000' },
                 { value: '100000', text: '₦100,000' },
@@ -80,6 +81,9 @@ export default {
             this.location = "";
             this.url = "";
             this.getHouses(this.url);
+        },
+        strLn(val) {
+            return val.length > 20 ? val.substring(0, 20) + '...' : val;
         }
     },
     computed: {
