@@ -47,7 +47,7 @@ export default {
             this.$store.dispatch(GET_HOUSES, payload).then(
                 () => {
                     this.loading = false;
-                    this.message = "Property with this requirement not available at the momment";
+                    this.message = "Property with this requirements are not available at the momment";
                 },
                 () => {
                     this.loading = false;
