@@ -3,6 +3,7 @@ export default {
     data() {
         return {
             show: false,
+            mainProps: { width: 200, height: 50, class: 'm1' }
         }
     },
     methods: {

@@ -10,15 +10,17 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueAnimateNumber from 'vue-animate-number'
 import VueScrollReveal from 'vue-scroll-reveal';
 import * as VueGoogleMaps from 'vue2-google-maps'
-
+import store from './store';
+import { componentRegistry } from "./registry/registry";
 
 // installComponents: true,
+componentRegistry(Vue);
 Vue.config.productionTip = false
     // Vue.use(x5GMaps, { key: 'AIzaSyBRqU75XYMpXNvbUW0PiMiHdL2_VTTbG0s', libraries: ['places'] })
 
 Vue.use(VueGoogleMaps, {
     load: {
-        key: 'AIzaSyBRqU75XYMpXNvbUW0PiMiHdL2_VTTbG0s',
+        key: 'AIzaSyBoBBlVq94q_IEDd0uoTvDoOZp1FSemMgw',
         libraries: 'places',
     },
 })
@@ -36,5 +38,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.use(IconsPlugin)
 new Vue({
     router,
+    store,
     render: h => h(App),
 }).$mount('#app')

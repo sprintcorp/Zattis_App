@@ -1,7 +1,11 @@
+import { GET_CATEGORIES } from "../../../store/action";
+import { mapGetters } from "vuex";
+
 export default {
     data() {
         return {
-            place: ""
+            place: "",
+            loading: false,
         }
     },
     methods: {
@@ -9,13 +13,22 @@ export default {
             el.style.left = '-200px';
             el.style.opacity = 0
         },
-        // enter(el, done) {
-        //     let delay = parseInt(el.getAttribute('delay'));
-        //     let left = parseInt(el.getAttribute('left'));
-
-        // Velocity(
-        //     el, { opacity: 1, left }, { delay, duration: 500, complete: done }
-        // )
+        getCategories() {
+            this.loading = true;
+            this.$store.dispatch(GET_CATEGORIES).then(
+                () => {
+                    this.loading = false;
+                },
+                () => {
+                    this.loading = false;
+                }
+            );
+        }
+    },
+    computed: {
+        ...mapGetters(['categories'])
+    },
+    mounted() {
+        this.getCategories()
     }
 }
-// }

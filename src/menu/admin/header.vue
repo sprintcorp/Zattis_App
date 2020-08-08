@@ -2,7 +2,7 @@
     <div>
         <b-navbar toggleable="lg" type="dark" class="navbar" variant="info">
             <b-navbar-nav class="text-light ml-3" style="font-size:40px" v-b-toggle.sidebar-1><b-icon-list></b-icon-list></b-navbar-nav>
-            <b-navbar-brand class="ml-5" :to="{name:'home'}">Zattis Estate</b-navbar-brand>
+            <b-navbar-brand class="ml-5" :to="{name:'home'}"><b-img v-bind="mainProps" src="https://res.cloudinary.com/sprintcorp/image/upload/v1596839998/zattis/PNG/Asset_15_lq0rgr.png" ></b-img></b-navbar-brand>
             
             <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
 

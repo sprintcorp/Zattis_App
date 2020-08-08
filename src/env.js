@@ -1,0 +1,1 @@
+export const BASE_URL = 'http://zattis-api-v1.herokuapp.com/';
