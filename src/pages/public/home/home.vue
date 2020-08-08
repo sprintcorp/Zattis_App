@@ -109,7 +109,7 @@
                 </b-container>  
             </div>
         
-       
+            <!-- <pre>{{ houses }}</pre> -->
         
             <div class="p-5">
                 <section>
@@ -141,38 +141,26 @@
                             
                             <b-col sm="12" md="6">
                                 <div class=""><h4>Latest Listed Properties</h4></div>
-                                <b-card-group deck>
-                                    <b-card
-                                        title="Inn For sale"
-                                        img-src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-1.2.1&w=1000&q=80"
-                                        img-alt="Image"
-                                        img-top
-                                        tag="article"
-                                        style="max-width: 20rem;"
-                                        class="mb-2"
-                                    >
-                                        <b-card-text>
-                                        
-                                        </b-card-text>
+                                <b-row>
+                                    <b-col v-for="(house,index) in houses" :key="index">
+                                        <b-card
+                                            :title=house.name
+                                            :img-src=house.image[0]
+                                            img-alt="Image"
+                                            img-top
+                                            tag="article"
+                                            style="max-width: 20rem;"
+                                            class="mb-2"
+                                        >
+                                            <b-card-text>
+                                            
+                                            </b-card-text>
 
-                                        <b-button :to="{name:'property',params:{id:1}}" variant="info">View</b-button>
-                                    </b-card>
-                                    <b-card
-                                        title="Duplex for sale"
-                                        img-src="https://freshome.com/wp-content/uploads/2018/09/contemporary-exterior.jpg"
-                                        img-alt="Image"
-                                        img-top
-                                        tag="article"
-                                        style="max-width: 20rem;"
-                                        class="mb-2"
-                                    >
-                                        <b-card-text>
-                                        
-                                        </b-card-text>
-
-                                        <b-button :to="{name:'property',params:{id:2}}" variant="info">View</b-button>
-                                    </b-card>
-                                </b-card-group>
+                                            <b-button :to="{name:'property',params:{id:house.slug}}" variant="info">View</b-button>
+                                        </b-card>
+                                    </b-col>
+                                    
+                                </b-row>
                                     
                                 
                                 

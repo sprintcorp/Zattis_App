@@ -1,4 +1,4 @@
-import { GET_CATEGORIES } from "../../../store/action";
+import { GET_CATEGORIES, GET_HOUSES } from "../../../store/action";
 import { mapGetters } from "vuex";
 
 export default {
@@ -23,12 +23,16 @@ export default {
                     this.loading = false;
                 }
             );
+        },
+        getHouses() {
+            this.$store.dispatch(GET_HOUSES, 2);
         }
     },
     computed: {
-        ...mapGetters(['categories'])
+        ...mapGetters(['categories', 'houses'])
     },
     mounted() {
-        this.getCategories()
+        this.getCategories();
+        this.getHouses();
     }
 }

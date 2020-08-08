@@ -6,7 +6,10 @@ class HouseProvider extends BaseHandler {
     }
 
     getHouses(payload) {
-        if (payload) {
+        if (payload == 2 || payload == 3) {
+            return this.query('api/v1/houses/_/random?rand=' + payload);
+        } else if (payload) {
+
             return this.query('api/v1/houses/_/requirement?' + payload);
         } else {
             return this.query('api/v1/houses');
