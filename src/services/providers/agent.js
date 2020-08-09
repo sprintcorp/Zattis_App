@@ -6,7 +6,7 @@ class AgentProvider extends BaseHandler {
     }
 
     getAgentHouses(payload) {
-        return this.get('api/v1/user' + payload);
+        return this.query('api/v1/user/' + payload);
     }
 }
 export default AgentProvider;

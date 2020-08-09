@@ -26,6 +26,9 @@ export default {
         },
         getHouses() {
             this.$store.dispatch(GET_HOUSES, 2);
+        },
+        strLn(val) {
+            return val.length > 20 ? val.substring(0, 20) + '...' : val;
         }
     },
     computed: {

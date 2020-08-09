@@ -144,7 +144,7 @@
                                 <b-row>
                                     <b-col v-for="(house,index) in houses" :key="index">
                                         <b-card
-                                            :title=house.name
+                                            :title=strLn(house.name)
                                             :img-src=house.image[0]
                                             img-alt="Image"
                                             img-top
