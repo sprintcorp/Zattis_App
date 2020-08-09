@@ -5,10 +5,12 @@ export default {
     data() {
         return {
             loading: false,
+            message: '',
         }
     },
     methods: {
         getAgentHouse(payload) {
+            this.loading = true;
             this.$store.dispatch(GET_AGENT, payload).then(
                 () => {
                     this.loading = false;

@@ -45,7 +45,7 @@
 
                 <b-col sm="12" md="9">
                     <div class="h4">{{ agent.firstname }} {{agent.lastname}} Properties</div>
-                    <b-row>
+                    <b-row v-if="!loading && agent.user.length">
                         <tr v-for="(agent,index) in agent.user" :key="index"
                         >
                             <b-card
@@ -66,7 +66,18 @@
                             </b-card>
                             </tr>
                        
-            </b-row>
+                    </b-row>
+
+
+                    <div class="" v-if="loading">
+                        <circular_loader></circular_loader>            
+                    </div>
+                    <div v-if="!loading && !agent.user.length">
+                        <no-content>{{message}}</no-content>
+                    </div>
+
+
+                    
                 </b-col>     
             </b-row>
     </div>
