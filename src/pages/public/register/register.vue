@@ -41,7 +41,7 @@
                                 <b-form-input type="password" placeholder="********" v-model="password"></b-form-input>
                             </b-input-group>
                             
-                            <b-button class="btn-block btn-info mb-2">REGISTER</b-button>                   
+                            <b-button class="btn-block btn-info mb-2" @click.prevent="register">REGISTER</b-button>                   
                             <b-row md="12" sm="12">
                                 <b-col md="12" class="text-center">
                                     <b-link style="text-decoration:none" :to="{name:'login'}"><h6 class="text">Already have an account? Login</h6></b-link>

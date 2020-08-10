@@ -2,7 +2,11 @@ import axios from "axios";
 import {
     BASE_URL
 } from "../env";
+import { getToken } from "../config";
 
+if (getToken()) {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${getToken()}`;
+}
 
 const baseHandler = axios.create({
     baseURL: BASE_URL,
