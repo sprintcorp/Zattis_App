@@ -1,5 +1,6 @@
 <template>
-    <div class="container-fluid login-background">
+<div>
+    <div v-if="!loading" class="container-fluid login-background">
         <b-container>
             <b-row sm="12" md="12" class="vertical-center">                        
                 <b-col offset-md="9" offset-sm="3" class="text-center" sm="12" xl="12" md="12">
@@ -52,7 +53,10 @@
                 </b-col>                       
             </b-row>
         </b-container>
+        
     </div>
+    <div v-if="loading"><grow_loader ></grow_loader></div>
+</div>
 </template>
 
 <style scoped>

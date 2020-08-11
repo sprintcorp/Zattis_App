@@ -1,5 +1,5 @@
 import { HouseService } from "../../services";
-import { GET_HOUSES, GET_HOUSE_BY_SLUG } from "../action";
+import { GET_HOUSES, GET_HOUSE_BY_SLUG, CREATE_PROPERTIES } from "../action";
 import { SET_HOUSES, SET_HOUSE } from "../mutation";
 
 
@@ -18,6 +18,10 @@ const actions = {
     async [GET_HOUSE_BY_SLUG](context, payload) {
         const { data } = await HouseService.getHouseBySlug(payload);
         context.commit(SET_HOUSE, data.data);
+        return data;
+    },
+    async [CREATE_PROPERTIES](context, payload) {
+        const { data } = await HouseService.createHouse(payload);
         return data;
     }
 };

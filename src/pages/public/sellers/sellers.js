@@ -20,7 +20,7 @@ export default {
                     this.loading = false;
 
                 }
-            ).error();
+            );
         },
         getName(user) {
             return user.firstname + " " + user.lastname;

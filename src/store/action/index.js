@@ -5,4 +5,6 @@ export const GET_AGENTS = "get_agents";
 export const GET_AGENT = "get_agent";
 export const REGISTER_USER = "register_user";
 export const LOGIN_USER = "login_user";
+export const UPDATE_USER = "update_user";
 export const GET_USER = "get_user";
+export const CREATE_PROPERTIES = "create_properties";

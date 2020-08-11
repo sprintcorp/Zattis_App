@@ -5,12 +5,12 @@ class AuthProvider extends BaseHandler {
         return this.post("api/v1/auth/register", payload);
     }
 
-    login(payoad) {
+    login(payload) {
         return this.post("api/v1/auth/login", payload);
     }
 
     getUserInformation() {
-        return this.post("api/v1/auth/me");
+        return this.query("api/v1/auth/me");
     }
 
     forgotPassword() {

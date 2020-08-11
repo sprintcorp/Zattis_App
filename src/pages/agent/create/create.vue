@@ -28,10 +28,10 @@
                     <b-col md="12">
                         <b-row class="my-2 mb-3">
                             <b-col sm="2">
-                            <label for="input-default">Name:</label>
+                            <label for="input-default">Title:</label>
                             </b-col>
                             <b-col sm="10">
-                            <b-form-input id="input-default" placeholder="name"></b-form-input>
+                            <b-form-input id="input-default" v-model="name" placeholder="title"></b-form-input>
                             </b-col>
                         </b-row>
                         <b-row class="my-1 mb-3">
@@ -39,7 +39,7 @@
                             <label for="input-default">Price:</label>
                             </b-col>
                             <b-col sm="10">
-                            <b-form-input id="input-default" type="number" placeholder="Price"></b-form-input>
+                            <b-form-input id="input-default" v-model="price" type="number" placeholder="Price"></b-form-input>
                             </b-col>
                         </b-row>
                         <b-row class="my-1 mb-3">
@@ -48,7 +48,8 @@
                             </b-col>
                             <b-col sm="10">
                             <b-form-file
-                            v-model="file"
+                            @change="uploadFile"
+                            v-model="files"
                             multiple 
                             placeholder="Choose a file or drop it here..."
                             drop-placeholder="Drop file here..."
@@ -60,7 +61,7 @@
                             <label for="input-default">Address:</label>
                             </b-col>
                             <b-col sm="10">
-                            <b-form-input id="input-default" placeholder="Address"></b-form-input>
+                            <b-form-input id="input-default" v-model="address" placeholder="Address"></b-form-input>
                             </b-col>
                         </b-row>
                         <b-row class="my-1 mb-3">
@@ -68,7 +69,20 @@
                             <label for="input-default">Category:</label>
                             </b-col>
                             <b-col sm="10">
-                            <b-form-select v-model="category" :options="options"></b-form-select>
+                            <b-form-select v-model="category">                                
+                                    <b-form-select-option v-for="(category,index) in categories" :key="index" :value=category._id>{{category.name}}</b-form-select-option>                                
+                            </b-form-select>
+                            </b-col>
+                        </b-row>
+                        <b-row class="my-1 mb-3">
+                            <b-col sm="2">
+                            <label for="input-default">Type:</label>
+                            </b-col>
+                            <b-col sm="10">
+                            <b-form-select v-model="type">                                
+                                    <b-form-select-option value="sale">Sale</b-form-select-option>                                
+                                    <b-form-select-option value="rent">Rent</b-form-select-option>                                
+                            </b-form-select>
                             </b-col>
                         </b-row>
                         <b-row class="my-1 mb-3">
@@ -95,11 +109,12 @@
                                 <b-form-textarea
                                     placeholder="House Description"
                                     rows="8"
+                                    v-model="description"
                                 ></b-form-textarea>
                             </b-col>
                         </b-row>
                         <b-row>
-                            <b-button class="btn-block" variant="info">SUBMIT</b-button>
+                            <b-button class="btn-block" variant="info" @click.prevent="createProperty()">SUBMIT</b-button>
                         </b-row>
 
                     </b-col>
