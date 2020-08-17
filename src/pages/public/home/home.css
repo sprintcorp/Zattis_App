@@ -1,3 +1,10 @@
+    .home_search_field {
+        position: absolute;
+        top: 70%;
+        left: 16%;
+        width: 70%;
+    }
+    
     .banner {
         background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&w=1000&q=80') no-repeat center center/cover;
         height: 70vh;
@@ -25,6 +32,35 @@
         height: 20vh;
     }
     
+    .home_word {
+        font-size: 40px;
+        color: white;
+    }
+    
     .no-info {
         height: 30vh;
+    }
+    
+    .property_image {
+        max-width: 20rem;
+    }
+    
+    @media (max-width: 480px) {
+        .home_search_field {
+            position: absolute;
+            top: 70%;
+            left: 5%;
+            width: 98%;
+        }
+        .counter_section .h1 {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .home_word {
+            font-size: 20px;
+            color: white;
+        }
+        .property_image {
+            width: 50rem;
+        }
     }
