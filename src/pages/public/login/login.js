@@ -4,7 +4,8 @@ export default {
     data() {
         return {
             email: "",
-            password: ""
+            password: "",
+            loading: false
         }
     },
     methods: {
@@ -29,8 +30,14 @@ export default {
             ).catch(
                 () => {
                     this.loading = false;
-                }
-            );
+                    this.$bvToast.toast('Invalid Login Credentials', {
+                        title: 'Failed Operation',
+                        autoHideDelay: 3000,
+                        appendToast: true,
+                        variant: 'danger'
+                    })
+                });
         }
+
     }
 }

@@ -4,6 +4,7 @@ export const GET_HOUSE_BY_SLUG = "get_house_by_slug";
 export const GET_AGENTS = "get_agents";
 export const GET_AGENT = "get_agent";
 export const GET_AGENT_BY_SEARCH = "get_agent_by_search";
+export const GET_HOUSE_BY_SEARCH = "get_house_by_search";
 export const REGISTER_USER = "register_user";
 export const LOGIN_USER = "login_user";
 export const UPDATE_USER = "update_user";

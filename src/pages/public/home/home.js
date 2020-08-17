@@ -6,6 +6,7 @@ export default {
         return {
             place: "",
             loading: false,
+            type: ""
         }
     },
     methods: {
@@ -29,6 +30,16 @@ export default {
         },
         strLn(val) {
             return val.length > 20 ? val.substring(0, 20) + '...' : val;
+        },
+        searchHouse() {
+            if (!this.type) {
+                this.type = "sale"
+            }
+            this.$router.push({
+                    name: 'search',
+                    query: { type: this.type, name: this.place }
+                })
+                // }
         }
     },
     computed: {

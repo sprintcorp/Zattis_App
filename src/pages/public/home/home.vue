@@ -7,16 +7,18 @@
                         <b-row class="justify-content-center" style="position:absolute;top:70%;left:16%;width:70%;">                        
                             <b-col sm="12" md="12" align-self="center">
                                 <b-input-group>
-                                <template v-slot:prepend>
-                                        <b-dropdown variant="info" v-model="option">                                        
-                                            <b-dropdown-item>Rent</b-dropdown-item>
-                                            <b-dropdown-item>Sale</b-dropdown-item>
-                                        </b-dropdown>
-                                    </template>
+                                <b-input-group-prepend>
+              <b-form-select v-model="type">
+                                    <!-- <b-form-select-option value="null">Select Type</b-form-select-option> -->
+                                    <b-form-select-option value="sale">Sale</b-form-select-option>
+                                    <b-form-select-option value="rent">Rent</b-form-select-option>
+                                    
+            </b-form-select>
+            </b-input-group-prepend>
                                     
                                     <b-form-input placeholder="Example: Lagos, Ikeja, Shomolu" v-model="place"></b-form-input>
                                     <b-input-group-prepend>
-                                        <span class="input-group-text"><b-icon-search></b-icon-search></span>
+                                        <span class="input-group-text"><b-icon-search @click="searchHouse()"></b-icon-search></span>
                                     </b-input-group-prepend>
                                 </b-input-group>
                             </b-col>                       

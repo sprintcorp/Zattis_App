@@ -11,6 +11,7 @@
                 <b-nav-item :to="{name:'home'}">Home </b-nav-item>
                 <b-nav-item :to="{name:'properties'}">Properties </b-nav-item>
                 <b-nav-item :to="{name:'sellers'}">Agents</b-nav-item>
+                <b-nav-item :to="{name:'search'}">Search Properties</b-nav-item>
                 
                 <!-- <b-nav-item href="#" @click="displaySearchForm">Search</b-nav-item> -->
             </b-navbar-nav>

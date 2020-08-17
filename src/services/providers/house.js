@@ -30,7 +30,7 @@ class HouseProvider extends BaseHandler {
     }
 
     getHousesBySearch(payload) {
-        return this.get('api/v1/houses/area/search', payload);
+        return this.query('api/v1/houses/area/search?name=' + payload.name + '&type=' + payload.type);
     }
 
     updateHouse(params, payload) {
