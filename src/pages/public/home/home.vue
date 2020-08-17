@@ -100,7 +100,7 @@
         </section>
       </div>
 
-      <div class="section-color">
+      <div class="section-color mb-4">
         <b-container fluid>
           <b-row md="12" class="p-2">
             <b-col md="6" class="text-center" v-scroll-reveal="{delay:600,scale:2}">
@@ -122,7 +122,7 @@
         <section>
             <b-container fluid>
                 <b-row v-scroll-reveal="{delay:800}">
-                    <b-col cols="12" sm="6" md="12" xs="12" class="m-3">
+                    <b-col sm="12" md="5" xs="12" class="m-3">
                         <div class>
                             <h4>Categories</h4>
                         </div>
@@ -149,25 +149,25 @@
                         </div>
                     </b-col>
 
-                    <b-col cols="12" sm="6" md="12" xs="12">
+                    <b-col sm="12" md="6" xs="12">
                         <div class>
                             <h4>Latest Listed Properties</h4>
                         </div>
                         <b-row>
-                            <b-col cols="12" v-for="(house,index) in houses" :key="index">
+                            <tr cols="6" v-for="(house,index) in houses" :key="index">
                             <b-card
                                 :title="strLn(house.name)"
                                 :img-src="house.image[0]"
                                 img-alt="Image"
                                 img-top
                                 tag="article"
-                                class="mb-2 property_image"
+                                class="mb-2 mr-1 property_image"
                             >
                                 <b-card-text></b-card-text>
 
                                 <b-button :to="{name:'property',params:{id:house.slug}}" variant="info">View</b-button>
                             </b-card>
-                            </b-col>
+                            </tr>
                         </b-row>
                     </b-col>
                 </b-row>
