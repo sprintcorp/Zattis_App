@@ -47,9 +47,9 @@
                     </template>
                     
                 </b-card>
-                <div>
+                <!-- <div>
                     <b-img v-bind="mainProps" src="https://res.cloudinary.com/sprintcorp/image/upload/v1596838857/zattis/Homin_Property.ng_Logo_2_akazty.jpg"></b-img>
-                </div>
+                </div> -->
             </b-col>
             <b-col sm="12" md="9" v-if="!loading && houses.length">
                 <!-- <pre>{{houses}}</pre> -->
