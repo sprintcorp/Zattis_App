@@ -1,4 +1,6 @@
 import { gmapsMap, gmapsMarker } from 'x5-gmaps'
+import { GET_HOUSE_BY_SLUG } from '../../../store/action'
+import { mapGetters } from 'vuex'
 export default {
     components: { gmapsMap, gmapsMarker },
     data() {
@@ -20,9 +22,24 @@ export default {
         },
         onSlideEnd() {
             this.sliding = false
-        }
+        },
+        getHouse(payload) {
+            this.loading = true;
+            this.$store.dispatch(GET_HOUSE_BY_SLUG, payload).then(
+                () => {
+                    this.loading = false;
+                }
+
+            ).catch(() => {
+                this.loading = false;
+
+            });
+        },
+    },
+    computed: {
+        ...mapGetters(['house'])
     },
     mounted() {
-
+        this.getHouse(this.$route.params.id);
     }
 }

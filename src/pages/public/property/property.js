@@ -29,12 +29,12 @@ export default {
             this.$store.dispatch(GET_HOUSE_BY_SLUG, payload).then(
                 () => {
                     this.loading = false;
-                },
-                () => {
-                    this.loading = false;
-
                 }
-            );
+
+            ).catch(() => {
+                this.loading = false;
+
+            });
         },
         getHouses() {
             this.$store.dispatch(GET_HOUSES, 2);

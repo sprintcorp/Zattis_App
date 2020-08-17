@@ -10,16 +10,17 @@
                 </b-row>
                     <b-input-group class="mb-4" sm="12" md="12">                                
                         <b-input-group-prepend>
-                                        <span class="input-group-text"><b-icon-envelope-fill></b-icon-envelope-fill></span>
+                            <span class="input-group-text"><b-icon-lock></b-icon-lock></span>
                         </b-input-group-prepend>                                    
-                        <b-form-input type="text" placeholder="usermail@sevice.com" v-model="email"></b-form-input>
+                        <b-form-input type="password" placeholder="new password" v-model="new_password"></b-form-input>
                     </b-input-group>                   
+                                   
                     
-                    <b-button class="btn-block btn-info mb-2" @click.prevent="resetPassword()">GET RESET LINK</b-button>                   
+                    <b-button class="btn-block btn-info mb-2" @click.prevent="resetPassword()">UPDATE</b-button>                   
                     <b-row md="12" sm="12">
-                        <b-col md="12" class="text-center">
+                        <!-- <b-col md="12" class="text-center">
                           <b-link style="text-decoration:none" :to="{name:'login'}"> <h6 class="text"> GO BACK TO LOGIN PAGE</h6></b-link>
-                        </b-col>
+                        </b-col> -->
                        
                     </b-row>
                 

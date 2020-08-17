@@ -26,7 +26,22 @@
                                                 <span class="input-group-text"><b-icon-envelope-fill></b-icon-envelope-fill></span>
                                 </b-input-group-prepend>                                    
                                 <b-form-input type="text" placeholder="Email" v-model="email"></b-form-input>
-                            </b-input-group>  
+                            </b-input-group> 
+                            
+                            
+                            <b-input-group class="mb-4" sm="12" md="12">                                
+                                <b-input-group-prepend>
+                                                <span class="input-group-text"><b-icon-award></b-icon-award></span>
+                                </b-input-group-prepend>                                    
+                                <b-form-select v-model="role">
+                                    <b-form-select-option value="user">User</b-form-select-option>
+                                    <b-form-select-option value="agent">Agent</b-form-select-option>
+                                    
+                                </b-form-select>
+                            </b-input-group> 
+
+
+
                             <b-input-group class="mb-4" sm="12" md="12">                                
                                 <b-input-group-prepend>
                                                 <span class="input-group-text"><b-icon-map></b-icon-map></span>

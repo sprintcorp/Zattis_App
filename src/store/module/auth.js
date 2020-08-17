@@ -1,7 +1,8 @@
 import { AuthService } from "../../services";
-import { REGISTER_USER, LOGIN_USER, UPDATE_USER, GET_USER } from "../action";
+import { REGISTER_USER, LOGIN_USER, UPDATE_USER, GET_USER, UPDATE_PASSWORD, RESET_PASSWORD, PASSWORD_RESET } from "../action";
 import {
-    saveUserData
+    saveUserData,
+    saveUser
 } from "../../config";
 import { SET_USER } from "../mutation";
 
@@ -37,6 +38,24 @@ const actions = {
     async [UPDATE_USER](context, payload) {
         const { data } = await AuthService.updateUserInformation(payload);
         context.dispatch(GET_USER);
+        if (data) {
+            saveUser(data.data)
+        }
+        return data;
+    },
+
+    async [UPDATE_PASSWORD](context, payload) {
+        const { data } = await AuthService.updateUserPassword(payload);
+        return data;
+    },
+
+    async [RESET_PASSWORD](context, payload) {
+        const { data } = await AuthService.forgotPassword(payload);
+        return data;
+    },
+
+    async [PASSWORD_RESET](context, payload) {
+        const { data } = await AuthService.resetPassword(payload);
         return data;
     }
 };

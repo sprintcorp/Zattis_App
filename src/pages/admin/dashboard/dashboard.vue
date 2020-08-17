@@ -35,7 +35,7 @@
                 
             </b-row>
             <b-row md="12" sm="12">
-                <b-col md="4" sm="4">
+                <!-- <b-col md="4" sm="4">
                     <b-link :to="{name:'users'}">
                         <b-card class="card-design">
                             <div style="font-size:100px"><b-icon-person-lines-fill></b-icon-person-lines-fill></div>
@@ -43,8 +43,18 @@
                             <p>View Users</p> 
                         </b-card>
                     </b-link>
-                </b-col>
+                </b-col> -->
 
+                <b-col md="4" sm="4">
+                    <b-link :to="{name:'adminCategory'}">
+                        <b-card class="card-design">
+                            <div style="font-size:100px"><b-icon-app></b-icon-app></div>
+                            <h5>Category</h5>
+                            <p>Category Add / Overview</p> 
+                        </b-card>
+                    </b-link>
+                </b-col>
+                
                 <b-col md="4" sm="4">
                     <b-link :to="{name:'adminPassword'}">
                         <b-card class="card-design">

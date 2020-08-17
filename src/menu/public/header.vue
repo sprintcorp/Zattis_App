@@ -22,11 +22,14 @@
                     <!-- Using 'button-content' slot -->
                     <template v-slot:button-content>
                     <b-button style="color:white" variant="outline-none">
-                            <b-icon icon="person-fill"></b-icon> Account
+                            <b-icon icon="person-fill"></b-icon> {{ account_info }}
                         </b-button>
                     </template>
-                    <b-dropdown-item :to="{name:'login'}">Login</b-dropdown-item>
-                    <b-dropdown-item :to="{name:'register'}">Register</b-dropdown-item>
+                    <b-dropdown-item v-if="!auth" :to="{name:'login'}">Login</b-dropdown-item>
+                    <b-dropdown-item v-if="!auth" :to="{name:'register'}">Register</b-dropdown-item>
+                    <b-dropdown-item v-if="auth" @click="goToDashboard()">Dashboard</b-dropdown-item>
+                    <b-dropdown-item v-if="auth" @click="logout()">Logout</b-dropdown-item>
+                    
                 </b-nav-item-dropdown>
             </b-navbar-nav>
             </b-collapse>

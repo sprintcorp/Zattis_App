@@ -1,11 +1,12 @@
 import { HouseService } from "../../services";
-import { GET_HOUSES, GET_HOUSE_BY_SLUG, CREATE_PROPERTIES } from "../action";
-import { SET_HOUSES, SET_HOUSE } from "../mutation";
+import { GET_HOUSES, GET_HOUSE_BY_SLUG, CREATE_PROPERTIES, GET_AGENT_HOUSES, GET_USER_HOUSES, SAVE_USER_HOUSES, REMOVE_USER_HOUSES } from "../action";
+import { SET_HOUSES, SET_HOUSE, SET_AGENT_HOUSES } from "../mutation";
 
 
 const initialState = {
     houses: [],
-    house: []
+    house: [],
+    agent_houses: []
 };
 const state = {...initialState };
 
@@ -23,6 +24,24 @@ const actions = {
     async [CREATE_PROPERTIES](context, payload) {
         const { data } = await HouseService.createHouse(payload);
         return data;
+    },
+    async [GET_AGENT_HOUSES](context) {
+        const { data } = await HouseService.getHousesByAgent();
+        context.commit(SET_AGENT_HOUSES, data.data);
+        return data;
+    },
+    async [GET_USER_HOUSES](context) {
+        const { data } = await HouseService.getUserHouses();
+        context.commit(SET_HOUSES, data.data);
+        return data;
+    },
+    async [SAVE_USER_HOUSES](context, payload) {
+        const { data } = await HouseService.saveUserHouse(payload);
+        return data;
+    },
+    async [REMOVE_USER_HOUSES](context, payload) {
+        const { data } = await HouseService.removeUserHouse(payload);
+        return data;
     }
 };
 
@@ -32,6 +51,9 @@ const mutations = {
     },
     [SET_HOUSE](state, house) {
         state.house = house;
+    },
+    [SET_AGENT_HOUSES](state, agent_houses) {
+        state.agent_houses = agent_houses;
     }
 };
 
@@ -42,6 +64,9 @@ const getters = {
     },
     house(state) {
         return state.house;
+    },
+    agent_houses(state) {
+        return state.agent_houses;
     }
 }
 

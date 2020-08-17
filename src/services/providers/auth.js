@@ -13,12 +13,12 @@ class AuthProvider extends BaseHandler {
         return this.query("api/v1/auth/me");
     }
 
-    forgotPassword() {
-        return this.post("api/v1/auth/forgotPassword");
+    forgotPassword(payload) {
+        return this.post("api/v1/auth/forgotPassword", payload);
     }
 
-    resetPassword(token, payload) {
-        return this.put("api/v1/auth/resetpassword/" + token, payload);
+    resetPassword(payload) {
+        return this.put("api/v1/auth/resetpassword/" + payload.token, payload);
     }
 
     updateUserInformation(payload) {

@@ -58,7 +58,7 @@
                             >
                                 <b-card
                                     :title=strLn(house.name)
-                                    :img-src=house.image[1]
+                                    :img-src=house.image[0]
                                     img-alt="Image"
                                     img-top
                                     img-height="200"
@@ -71,8 +71,14 @@
                                     <b-card-text>
                                         
                                     </b-card-text>
-
-                                    <b-button :to="{name:'property',params:{id:house.slug}}" variant="info">View</b-button>
+                                    <b-row md="12">
+                                        <b-col md="9">
+                                            <b-button :to="{name:'property',params:{id:house.slug}}" variant="info">View</b-button>
+                                        </b-col>
+                                        <b-col md="2">
+                                            <div style="font-size:30px" @click="saveHouse(house._id)"><b-icon-heart></b-icon-heart></div>
+                                        </b-col>
+                                    </b-row>
                                 </b-card>
                                 </tr>
                         

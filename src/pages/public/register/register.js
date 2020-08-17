@@ -9,7 +9,7 @@ export default {
             address: "",
             role: "",
             password: "",
-            loading: true
+            loading: false
         }
     },
     methods: {
@@ -20,11 +20,18 @@ export default {
                 'firstname': this.firstname,
                 'lastname': this.lastname,
                 'address': this.address,
-                'password': this.password
+                'password': this.password,
+                'role': this.role
             };
             this.$store.dispatch(REGISTER_USER, payload).then(
-                () => {
+                (data) => {
                     this.loading = false;
+                    const role = data.role;
+                    if (role == 'agent') {
+                        this.$router.push({ name: 'agent' });
+                    } else {
+                        this.$router.push({ name: 'user' });
+                    }
                 }
             ).catch(
                 () => {

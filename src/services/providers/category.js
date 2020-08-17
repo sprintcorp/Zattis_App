@@ -17,8 +17,8 @@ class CategoryProvider extends BaseHandler {
         return this.get('api/v1/categories/info/' + payload);
     }
 
-    updateCategory(params, payload) {
-        return this.put('api/v1/categories/' + params, payload);
+    updateCategory(payload) {
+        return this.put('api/v1/categories/' + payload.id, payload);
     }
 
     deleteCategory(payload) {

@@ -15,8 +15,16 @@ export default {
                 'password': this.password
             };
             this.$store.dispatch(LOGIN_USER, payload).then(
-                () => {
+                (data) => {
                     this.loading = false;
+                    const role = data.role;
+                    if (role == 'agent') {
+                        this.$router.push({ name: 'agent' });
+                    } else if (role == 'admin') {
+                        this.$router.push({ name: 'admin' });
+                    } else {
+                        this.$router.push({ name: 'user' });
+                    }
                 }
             ).catch(
                 () => {

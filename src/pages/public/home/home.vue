@@ -172,8 +172,7 @@
            
         </div>
          <div class="" v-if="loading">
-            <circular_loader></circular_loader>
-            
+            <circular_loader></circular_loader>            
         </div>
     </div>
 </template>

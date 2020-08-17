@@ -1,8 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { getToken } from "../config";
 
 Vue.use(VueRouter);
-
+const preventRoutes = {
+    beforeEnter: (to, from, next) => {
+        if (getToken()) {
+            next()
+        } else {
+            next('/login')
+        }
+    }
+};
 const router = new VueRouter({
     mode: 'history',
     scrollBehavior() {
@@ -26,11 +35,18 @@ const router = new VueRouter({
                 import ('../pages/public/forgot-password/password.vue'),
             name: 'reset-password',
         },
+        {
+            path: '/password-reset/:token',
+            component: () =>
+                import ('../pages/public/reset-password/password.vue'),
+            name: 'password-reset',
+        },
 
         {
             path: '/',
             component: () =>
                 import ('../layout/public/layout.vue'),
+
             redirect: {
                 name: 'home'
             },
@@ -74,6 +90,7 @@ const router = new VueRouter({
             path: '/user',
             component: () =>
                 import ('../layout/user/layout.vue'),
+            ...preventRoutes,
             redirect: {
                 name: 'user'
             },
@@ -104,6 +121,7 @@ const router = new VueRouter({
             path: '/agent',
             component: () =>
                 import ('../layout/agent/layout.vue'),
+            ...preventRoutes,
             redirect: {
                 name: 'agent'
             },
@@ -145,6 +163,7 @@ const router = new VueRouter({
             path: '/admin',
             component: () =>
                 import ('../layout/admin/layout.vue'),
+            ...preventRoutes,
             redirect: {
                 name: 'admin'
             },
@@ -188,6 +207,11 @@ const router = new VueRouter({
                 component: () =>
                     import ('../pages/admin/password/password.vue'),
                 name: 'adminPassword'
+            }, {
+                path: 'category',
+                component: () =>
+                    import ('../pages/admin/category/category.vue'),
+                name: 'adminCategory'
             }]
         }
     ]

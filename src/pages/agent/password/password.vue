@@ -5,6 +5,7 @@
         </div>
          <b-container class="mt-5 p-3">
             <b-card style="width:100%">
+                <!-- {{ disabled }} -->
                  <b-row md="12">
                                       
 
@@ -14,7 +15,7 @@
                             <label for="input-default">Current Password:</label>
                             </b-col>
                             <b-col sm="10">
-                            <b-form-input type="password" id="input-default" placeholder="Current Password"></b-form-input>
+                            <b-form-input type="password" id="input-default" v-model="old_password" placeholder="Current Password"></b-form-input>
                             </b-col>
                         </b-row>
                         <b-row class="my-1 mb-3">
@@ -22,7 +23,7 @@
                             <label for="input-default">New Password:</label>
                             </b-col>
                             <b-col sm="10">
-                            <b-form-input type="password" id="input-default" placeholder="New Password"></b-form-input>
+                            <b-form-input type="password" :state="validation"  @blur="checkPasswordMatch()" id="input-default" v-model="new_password" placeholder="New Password"></b-form-input>
                             </b-col>
                         </b-row>
                         <b-row class="my-1 mb-3">
@@ -30,11 +31,12 @@
                             <label for="input-default">Confirm Password:</label>
                             </b-col>
                             <b-col sm="10">
-                            <b-form-input type="password" id="input-default" placeholder="Confirm Password"></b-form-input>
+                            <b-form-input type="password" :state="validation" @blur="checkPasswordMatch()" id="input-default" v-model="confirm_password" placeholder="Confirm Password"></b-form-input>
                             </b-col>
                         </b-row>
                         <b-row>
-                            <b-button class="btn-block" variant="info">UPDATE</b-button>
+                            <b-button v-if="!loading" class="btn-block" variant="info" :disabled=disabled @click.prevent="updatePassword">UPDATE</b-button>
+                            <b-button v-if="loading" class="btn-block" variant="info" :disabled=disabled><strong>Saving...</strong></b-button>
                         </b-row>
 
                     </b-col>

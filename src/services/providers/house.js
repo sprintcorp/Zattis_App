@@ -25,7 +25,7 @@ class HouseProvider extends BaseHandler {
         return this.get('api/v1/houses/_/' + payload);
     }
 
-    getHousesByUser() {
+    getHousesByAgent() {
         return this.get('api/v1/houses/_/user');
     }
 
@@ -37,8 +37,16 @@ class HouseProvider extends BaseHandler {
         return this.put('api/v1/houses/' + params, payload);
     }
 
-    deleteCategory(payload) {
-        return this.delete('api/v1/categories/' + payload);
+    getUserHouses() {
+        return this.query('api/v1/user_house');
+    }
+
+    saveUserHouse(payload) {
+        return this.post('api/v1/user_house', payload);
+    }
+
+    removeUserHouse(payload) {
+        return this.delete('api/v1/user_house/' + payload);
     }
 }
 export default HouseProvider;

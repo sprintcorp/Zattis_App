@@ -1,5 +1,6 @@
-import { GET_HOUSES } from "../../../store/action"
+import { GET_HOUSES, SAVE_USER_HOUSES } from "../../../store/action"
 import { mapGetters } from "vuex";
+import { getToken } from "../../../config";
 
 export default {
     data() {
@@ -43,16 +44,28 @@ export default {
         }
     },
     methods: {
+        saveHouse(house) {
+            if (getToken()) {
+                const payload = {
+                    'house': house
+                }
+                this.$store.dispatch(SAVE_USER_HOUSES, payload);
+            } else {
+                this.$router.push({ name: 'login' });
+            }
+        },
         getHouses(payload) {
             this.loading = true;
             this.$store.dispatch(GET_HOUSES, payload).then(
                 () => {
                     this.loading = false;
                     this.message = "Property with this requirements are not available at the momment";
-                },
+                }
+
+            ).catch(
                 () => {
                     this.loading = false;
-                    this.message = "Property not available at the momment";
+                    this.message = "Error Fetching Properties";
                 }
             );
         },

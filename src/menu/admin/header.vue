@@ -31,17 +31,18 @@
             </b-collapse> -->
         </b-navbar>
 
-        <b-sidebar id="sidebar-1" title="Fred Adebayo" shadow>
+        <b-sidebar id="sidebar-1" :title=name shadow>
             <div class="px-3 py-2">
-                <b-img src="https://picsum.photos/200/200/?image=54"  height="200" width="287"></b-img>
+                <b-img :src=image height="230" width="287"></b-img>
                 <b-list-group flush class="">
                             <b-list-group-item class="h4" :to="{name:'admin'}"><b-icon-box></b-icon-box> Dashboard</b-list-group-item>
                             <b-list-group-item class="h4" :to="{name:'allProperties'}"><b-icon-house-fill></b-icon-house-fill> Property</b-list-group-item>
                             <b-list-group-item class="h4" :to="{name:'agents'}"><b-icon-person-bounding-box></b-icon-person-bounding-box> Agent</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'users'}"><b-icon-person-lines-fill></b-icon-person-lines-fill> User</b-list-group-item>
+                            <b-list-group-item class="h4" :to="{name:'adminCategory'}"><b-icon-app></b-icon-app> Category</b-list-group-item>
+                            <!-- <b-list-group-item class="h4" :to="{name:'users'}"><b-icon-person-lines-fill></b-icon-person-lines-fill> User</b-list-group-item> -->
                             <b-list-group-item class="h4" :to="{name:'adminProfile'}"><b-icon-person-fill></b-icon-person-fill> Profile</b-list-group-item>
                             <b-list-group-item class="h4" :to="{name:'adminPassword'}"><b-icon-lock-fill></b-icon-lock-fill> Password</b-list-group-item>
-                            <b-list-group-item class="h4" :to="{name:'login'}"><b-icon-door-closed-fill></b-icon-door-closed-fill> Logout</b-list-group-item>
+                            <b-list-group-item class="h4" @click="logout()"><b-icon-door-closed-fill></b-icon-door-closed-fill> Logout</b-list-group-item>
                           
                         </b-list-group>
             </div>

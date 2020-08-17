@@ -1,5 +1,5 @@
 import { AgentService } from "../../services";
-import { GET_AGENTS, GET_AGENT } from "../action";
+import { GET_AGENTS, GET_AGENT, GET_AGENT_BY_SEARCH } from "../action";
 import { SET_AGENTS, SET_AGENT } from "../mutation";
 
 const initialState = {
@@ -17,6 +17,11 @@ const actions = {
     async [GET_AGENT](context, payload) {
         const { data } = await AgentService.getAgentHouses(payload);
         context.commit(SET_AGENT, data.data);
+        return data;
+    },
+    async [GET_AGENT_BY_SEARCH](context, payload) {
+        const { data } = await AgentService.getAgentBySearch(payload);
+        context.commit(SET_AGENTS, data.data);
         return data;
     }
 };

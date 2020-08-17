@@ -4,6 +4,7 @@ import { mapGetters } from "vuex"
 export default {
     data() {
         return {
+            saving: false,
             profile_image: "https://htmlstream.com/preview/unify-v2.6/assets/img-temp/400x450/img5.jpg",
             loading: false,
             user: {
@@ -46,7 +47,7 @@ export default {
             });
         },
         updateUserInformation() {
-            // alert("hello");
+            this.saving = true;
             const formData = new FormData();
             formData.append('image', this.profile_image)
             formData.append('firstname', this.user.firstname);
@@ -54,8 +55,16 @@ export default {
             formData.append('email', this.user.email);
             formData.append('address', this.user.address);
             formData.append('phone', this.user.phone);
-            console.log(formData);
-            this.$store.dispatch(UPDATE_USER, formData);
+            // console.log(formData);
+            this.$store.dispatch(UPDATE_USER, formData).then(
+                () => {
+                    this.saving = false;
+                }
+            ).catch(
+                () => {
+                    this.saving = false;
+                }
+            );
         }
     },
     computed: {
