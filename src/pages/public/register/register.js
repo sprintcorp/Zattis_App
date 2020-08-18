@@ -36,6 +36,12 @@ export default {
             ).catch(
                 () => {
                     this.loading = false;
+                    this.$bvToast.toast('Email Already Exist. Please try with another mail', {
+                        title: 'Failed Operation',
+                        autoHideDelay: 4000,
+                        appendToast: true,
+                        variant: 'danger'
+                    })
                 }
             );
         }
