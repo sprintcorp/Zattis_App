@@ -37,22 +37,18 @@ export default {
             };
             this.$store.dispatch(UPDATE_PASSWORD, payload).then(() => {
                 this.loading = false;
-                this.toast = true;
-                this.$bvToast.toast(`Password Successfully Updated`, {
-                    title: 'Successful Operation',
-                    autoHideDelay: 5000,
-                    appendToast: this.toast,
-                    variant: 'success'
-                })
+                this.$swal({
+                    text: 'Password updated successfully',
+                    icon: 'success',
+                    timer: 5000
+                });
             }).catch(() => {
                 this.loading = false;
-                this.toast = true;
-                this.$bvToast.toast('Password is incorrect', {
-                    title: 'Failed Operation',
-                    autoHideDelay: 5000,
-                    appendToast: this.toast,
-                    variant: 'danger'
-                })
+                this.$swal({
+                    text: 'Password is incorrect',
+                    icon: 'error',
+                    timer: 5000
+                });
             });
         }
     }

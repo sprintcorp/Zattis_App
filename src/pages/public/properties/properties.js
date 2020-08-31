@@ -49,10 +49,36 @@ export default {
                 const payload = {
                     'house': house
                 }
-                this.$store.dispatch(SAVE_USER_HOUSES, payload);
+                this.$store.dispatch(SAVE_USER_HOUSES, payload).then(() => {
+                    this.$swal({
+                        text: 'Property successfully added to favourite list',
+                        icon: 'success',
+                        // position: 'bottom-end',
+                        // toast: true,
+                        showConfirmButton: false,
+                        timer: 5000,
+                        timerProgressBar: true,
+                    });
+                }).catch(() => {
+                    this.$swal({
+                        text: 'Property already in favourite list',
+                        icon: 'warning',
+                        // position: 'middle-end',
+                        // toast: true,
+                        showConfirmButton: false,
+                        timer: 5000,
+                        timerProgressBar: true,
+                    });
+                });
             } else {
-                this.$router.push({ name: 'login' });
+                this.$refs['my-modal'].show()
             }
+        },
+        hideModal() {
+            this.$refs['my-modal'].hide()
+        },
+        login() {
+            this.$router.push({ name: 'login' });
         },
         getHouses(payload) {
             this.loading = true;

@@ -7,7 +7,7 @@
 
                     <b-card style="background: rgba(0,0,0,.1);max-width: 100%;" >
                         <b-row class="justify-content-center mb-4">
-                            <b-link :to="{name:'home'}" style="text-decoration:none"><h2 class="text"><b-icon-house></b-icon-house> Zattis Estate</h2></b-link>
+                            <b-link :to="{name:'home'}" style="text-decoration:none"><h2 class="text"><b-icon-house></b-icon-house>Homin's Property.NG</h2></b-link>
                         </b-row>
                             <b-input-group class="mb-4" sm="12" md="12">                                
                                 <b-input-group-prepend>

@@ -27,7 +27,8 @@
                             <b-row class="text-right">
                                 <b-col>
                                     
-                                    <b-button variant="info" class="mt-3 text-right" @click.prevent="createCategory()">Create</b-button>
+                                    <b-button variant="info" v-if="!load" class="mt-3 text-right" @click.prevent="createCategory()">Create</b-button>
+                                    <button_loader v-if="load">Loading...</button_loader> 
                                 </b-col>
                             </b-row>
 

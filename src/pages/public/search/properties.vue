@@ -2,7 +2,7 @@
   <div class="body">
     <div>
       <div class="header pt-2 pl-5 mb-5">
-        <div class="h3" style="color:black">Properties on Zattis Properties {{ type }}</div>
+        <div class="h3" style="color:black">Properties on Homin's Properties {{ type }}</div>
       </div>
       <b-row>
           

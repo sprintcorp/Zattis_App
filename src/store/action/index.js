@@ -23,3 +23,4 @@ export const SAVE_USER_HOUSES = "save_user_houses";
 export const REMOVE_USER_HOUSES = "remove_user_houses";
 export const CREATE_RATING = "create_rating";
 export const GET_RATING = "get_rating";
+export const GET_CATEGORY_HOUSES = "get_category_houses";

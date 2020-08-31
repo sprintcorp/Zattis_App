@@ -18,8 +18,9 @@
                         </template>
 
                         <b-card-body>
+                            <b-card-sub-title class="mb-2">Click on star to rate agent</b-card-sub-title>
                             <b-card-text>
-                            <star-rating v-model="info" @rating-selected="setRating"></star-rating>
+                            <star-rating v-model="info" @rating-selected="setRating" :show-rating="false" :star-size=30 inline="true"></star-rating>
                         </b-card-text>
                         <!-- <b-card-title>Contact information</b-card-title> -->
                         <!-- <b-card-sub-title class="mb-2">Card Sub Title</b-card-sub-title> -->
@@ -83,6 +84,17 @@
                     
                 </b-col>     
             </b-row>
+
+             <b-modal ref="my-modal" centered hide-footer hide-header-close hide-header title="">
+                <div class="d-block text-center">
+                    <h5>Only a logged in user can rate an agent</h5>
+                </div>
+                <div class="text-center">
+                <b-button class="mt-2 mr-3" variant="outline-danger" @click="hideModal">Close Me</b-button>
+                
+                <b-button class="mt-2" variant="outline-warning" @click="login">Login</b-button>
+                </div>
+            </b-modal>
     </div>
 </template>
 

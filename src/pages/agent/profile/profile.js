@@ -58,11 +58,21 @@ export default {
             // console.log(formData);
             this.$store.dispatch(UPDATE_USER, formData).then(
                 () => {
+                    this.$swal({
+                        text: 'Profile updated successfully',
+                        icon: 'success',
+                        timer: 5000
+                    });
                     this.saving = false;
                     location.reload();
                 }
             ).catch(
                 () => {
+                    this.$swal({
+                        text: 'Error updating profile',
+                        icon: 'error',
+                        timer: 5000
+                    });
                     this.saving = false;
                 }
             );

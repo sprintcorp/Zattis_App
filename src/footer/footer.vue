@@ -2,7 +2,7 @@
     <div class="background">
         <b-row class="col-md-12">
             <b-col offset-md="2" class="col-md-7">
-                <h6>&copy; 2020 Zattis Technologies</h6>
+                <h6>&copy; 2020 Homin's Property.NG</h6>
             </b-col>
             <b-col>
                 <!-- <font-awesome-icon icon="facebook" /> -->

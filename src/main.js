@@ -12,6 +12,7 @@ import VueScrollReveal from 'vue-scroll-reveal';
 import * as VueGoogleMaps from 'vue2-google-maps'
 import store from './store';
 import { componentRegistry } from "./registry/registry";
+import VueSweetalert2 from 'vue-sweetalert2';
 
 // import AOS from 'aos';
 // import "aos/dist/aos.css";
@@ -27,7 +28,7 @@ Vue.use(VueGoogleMaps, {
         libraries: 'places',
     },
 })
-
+Vue.use(VueSweetalert2);
 Vue.use(VueAnimateNumber)
 Vue.use(BootstrapVue)
 Vue.use(VueScrollReveal, {

@@ -114,7 +114,8 @@
                             </b-col>
                         </b-row>
                         <b-row>
-                            <b-button class="btn-block" variant="info" @click.prevent="createProperty()">SUBMIT</b-button>
+                            <b-button class="btn-block" v-if="!loading" variant="info" @click.prevent="createProperty()">SUBMIT</b-button>
+                            <b-button class="btn-block" v-if="loading" variant="info">Loading...</b-button>
                         </b-row>
 
                     </b-col>

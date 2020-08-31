@@ -130,17 +130,17 @@
                         <div class="row mb-5">
                             <div class="text-justify">
                             <v-col v-for="(category,index) in categories" :key="index">
-                                <b-link class="mr-3" style="color:black">
-                                <b-badge>{{category.name}}</b-badge>
+                                <b-link class="mr-3" :to="{name:'category-properties',params:{id:category.slug}}" style="color:black">
+                                  <b-badge>{{category.name}}</b-badge>
                                 </b-link>
                             </v-col>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="h4">About Zattis Properties</div>
+                            <div class="h4">About Homin's Properties</div>
                             <div>
                             <p class="text-justify p-2">
-                                Zattis Properties is a real estate and property website in Nigeria with property listings for sale,
+                                Homin's Properties is a real estate and property website in Nigeria with property listings for sale,
                                 rent and lease. We offer Nigerian property seekers an easy way to find details of property like homes,
                                 houses, lands, shops, office spaces and other commercial properties to buy or rent. Nigeria Property Centre
                                 provides a platform for advertising property from organisations and Nigerian private property owners.

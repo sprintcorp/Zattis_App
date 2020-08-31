@@ -5,7 +5,7 @@
         <div>
         
             <div class="header pt-2 pl-5">
-                <div class="h3" style="color:black">Properties on Zattis Properties</div>
+                <div class="h3" style="color:black">Properties on Homin's Properties</div>
             </div>
             <b-row class="p-5">
                 <b-col md="8" sm="12">

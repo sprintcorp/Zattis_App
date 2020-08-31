@@ -48,6 +48,10 @@ class HouseProvider extends BaseHandler {
     removeUserHouse(payload) {
         return this.delete('api/v1/user_house/' + payload);
     }
+
+    getCategoryHouses(payload) {
+        return this.query('api/v1/categories/cat/' + payload);
+    }
 }
 export default HouseProvider;
 // export default HouseProvider;

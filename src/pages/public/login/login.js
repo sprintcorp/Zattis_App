@@ -30,12 +30,19 @@ export default {
             ).catch(
                 () => {
                     this.loading = false;
-                    this.$bvToast.toast('Invalid Login Credentials', {
-                        title: 'Failed Operation',
-                        autoHideDelay: 3000,
-                        appendToast: true,
-                        variant: 'danger'
-                    })
+                    // this.$bvToast.toast('Invalid Login Credentials', {
+                    //     title: 'Failed Operation',
+                    //     autoHideDelay: 3000,
+                    //     appendToast: true,
+                    //     variant: 'danger'
+                    // })
+                    this.$swal({
+                        // title: 'Error!',
+                        text: 'Invalid Login Credentials',
+                        icon: 'error',
+                        timer: 5000
+                            // confirmButtonText: 'Cool'
+                    });
                 });
         }
 

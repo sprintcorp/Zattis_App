@@ -12,7 +12,8 @@ export default {
             phone: "",
             name: "",
             price: "",
-            type: ""
+            type: "",
+            loading: false
         }
     },
     methods: {
@@ -25,6 +26,7 @@ export default {
             console.log(this.files);
         },
         createProperty() {
+            this.loading = true
             const formData = new FormData();
             for (const i of Object.keys(this.files)) {
                 formData.append('image', this.files[i])
@@ -37,19 +39,21 @@ export default {
             formData.append('price', this.price);
             formData.append('network', this.network);
             formData.append('name', this.name);
-
-            // const payload = {
-            //     'type': this.type,
-            //     'category': this.category,
-            //     'features': this.features,
-            //     'description': this.decription,
-            //     'phone': this.phone,
-            //     'name': this.name,
-            //     'price': this.price,
-            //     'network': this.network,
-            //     'image': formData
-            // };
-            this.$store.dispatch(CREATE_PROPERTIES, formData);
+            this.$store.dispatch(CREATE_PROPERTIES, formData).then(() => {
+                this.loading = false;
+                this.$swal({
+                    text: 'Property created successfully',
+                    icon: 'success',
+                    timer: 5000
+                });
+            }).catch(() => {
+                this.loading = false;
+                this.$swal({
+                    text: 'Property not created',
+                    icon: 'error',
+                    timer: 5000
+                });
+            });
         }
     },
     computed: {

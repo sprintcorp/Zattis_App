@@ -8,7 +8,8 @@ export default {
             message: "",
             name: "",
             description: "",
-            toast: false
+            toast: false,
+            load: false
         }
     },
     methods: {
@@ -30,11 +31,23 @@ export default {
         deleteCategory(id) {
             this.$store.dispatch(DELETE_CATEGORY, id).then(
                 () => {
+                    this.$swal({
+                        text: 'Category deleted successfully',
+                        icon: 'success',
+                        timer: 5000
+                    });
                     this.getCategories()
                 }
 
             ).catch(
                 () => {
+                    this.$swal({
+                        // title: 'Error!',
+                        text: 'Error deleting category',
+                        icon: 'error',
+                        timer: 5000
+                            // confirmButtonText: 'Cool'
+                    });
                     this.getCategories()
                 }
             );
@@ -44,28 +57,26 @@ export default {
                 'name': this.name,
                 'description': this.description
             };
-            this.toast = false;
+            this.load = true;
             this.$store.dispatch(CREATE_CATEGORY, payload).then(
                 () => {
-                    this.toast = true;
-                    this.$bvToast.toast(`Category created successfully`, {
-                        title: 'Successful Operation',
-                        autoHideDelay: 5000,
-                        appendToast: this.toast,
-                        variant: 'success'
-                    })
+                    this.$swal({
+                        text: 'Category created successfully',
+                        icon: 'success',
+                        timer: 5000
+                    });
                     this.getCategories();
-
+                    this.load = false;
                 }
             ).catch(() => {
-                // console.log(error)
-                this.toast = true;
-                this.$bvToast.toast(`Duplicate field value entered`, {
-                    title: 'Error Operation',
-                    autoHideDelay: 5000,
-                    appendToast: this.toast,
-                    variant: 'danger'
-                })
+                this.load = false;
+                this.$swal({
+                    // title: 'Error!',
+                    text: 'Category Already exist',
+                    icon: 'warning',
+                    timer: 5000
+                        // confirmButtonText: 'Cool'
+                });
             });
         }
 

@@ -4,57 +4,34 @@
             <div class="header pt-2 pl-5">
                 <div class="h3" style="color:black">Properties on Homin's Properties</div>
             </div>
+            <!-- <pre>{{houses[0].houses.length}}</pre> -->
         <b-row class="p-5">
             <b-col sm="12" md="3">
-                <div class="h4 card p-2" style="background-color:#e6e2e2;border:0px">Advanced Filter Options</div>
 
-                <b-card bg-variant="light" style="border:0px">
-                    <template>
-                        <div>
-                            <label>Minimum Amount</label>
-                            <b-form-select
-                            v-model="min"
-                            :options="min_options"
-                            class="mb-3"
-                            value-field="value"
-                            text-field="text"
-                            disabled-field="notEnabled"
-                            ></b-form-select>
 
-                            <label>Maximum Amount</label>
-                            <b-form-select
-                            v-model="max"
-                            :options="max_options"
-                            class="mb-3"
-                            value-field="value"
-                            text-field="text"
-                            disabled-field="notEnabled"
-                            ></b-form-select>
-
-                            <label>Location</label>
-                            <b-form-input v-model="location" placeholder="Ikeja or Baruwa"></b-form-input>
-                            <b-row>
-                                <b-col>
-                                    <b-button variant="info" @click="search()" class="mt-3 text-right"><b-icon-search></b-icon-search></b-button>
-                                </b-col>
-                                <!-- <b-col></b-col> -->
-                                <b-col>
-                                    <b-button variant="info" @click="clear()" class="mt-3 text-right"><b-icon-trash></b-icon-trash></b-button>
-                                </b-col>
-                            </b-row>
-                            
-                        </div>
+               <div>
+                <b-card>
+                    <template v-slot:header>
+                    <h4 class="mb-0">Categories</h4>
                     </template>
+
+                    <b-list-group v-for="(category,index) in categories" :key="index">
+                       <b-link :to="{name:'category-properties',params:{id:category.slug}}" @click="getHouses(category.slug)"> <b-list-group-item>{{category.name}}</b-list-group-item> </b-link>  
+                    </b-list-group>
+
                     
+ 
                 </b-card>
+                </div>
                 <!-- <div>
                     <b-img v-bind="mainProps" src="https://res.cloudinary.com/sprintcorp/image/upload/v1596838857/zattis/Homin_Property.ng_Logo_2_akazty.jpg"></b-img>
                 </div> -->
             </b-col>
-            <b-col sm="12" md="9" v-if="!loading && houses.length">
+            
+            <b-col sm="12" md="9" v-if="!loading && houses[0].houses.length">
                 <!-- <pre>{{houses}}</pre> -->
                 <b-row>
-                            <tr v-for="(house,index) in houses" :key="index"
+                            <tr v-for="(house,index) in houses[0].houses" :key="index"
                             >
                                 <b-card
                                     :title=strLn(house.name)
@@ -89,7 +66,7 @@
                 <div class="" v-if="loading">
                     <circular_loader></circular_loader>            
                 </div>
-                <div v-if="!loading && !houses.length">
+                <div v-if="!loading && !houses[0].houses.length">
                     <no-content>{{message}}</no-content>
                 </div>
             </b-col>

@@ -1,5 +1,5 @@
 import { HouseService } from "../../services";
-import { GET_HOUSES, GET_HOUSE_BY_SLUG, CREATE_PROPERTIES, GET_AGENT_HOUSES, GET_USER_HOUSES, SAVE_USER_HOUSES, REMOVE_USER_HOUSES, GET_HOUSE_BY_SEARCH } from "../action";
+import { GET_HOUSES, GET_HOUSE_BY_SLUG, CREATE_PROPERTIES, GET_AGENT_HOUSES, GET_USER_HOUSES, SAVE_USER_HOUSES, REMOVE_USER_HOUSES, GET_HOUSE_BY_SEARCH, GET_CATEGORY_HOUSES } from "../action";
 import { SET_HOUSES, SET_HOUSE, SET_AGENT_HOUSES } from "../mutation";
 
 
@@ -48,6 +48,12 @@ const actions = {
     },
     async [REMOVE_USER_HOUSES](context, payload) {
         const { data } = await HouseService.removeUserHouse(payload);
+        return data;
+    },
+
+    async [GET_CATEGORY_HOUSES](context, payload) {
+        const { data } = await HouseService.getCategoryHouses(payload);
+        context.commit(SET_HOUSES, data.data);
         return data;
     }
 };

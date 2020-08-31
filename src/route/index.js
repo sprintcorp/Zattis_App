@@ -64,6 +64,11 @@ const router = new VueRouter({
 
                 },
                 {
+                    path: '/:id',
+                    component: () =>
+                        import ('../pages/public/category/properties.vue'),
+                    name: 'category-properties'
+                }, {
                     path: '/search',
                     component: () =>
                         import ('../pages/public/search/properties.vue'),

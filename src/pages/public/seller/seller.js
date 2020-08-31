@@ -14,6 +14,13 @@ export default {
         }
     },
     methods: {
+        hideModal() {
+            this.$refs['my-modal'].hide()
+            this.getRatings();
+        },
+        login() {
+            this.$router.push({ name: 'login' });
+        },
         setRating: function(rating) {
             this.rating = rating;
             // alert(rating);
@@ -25,17 +32,31 @@ export default {
                     }
                     this.$store.dispatch(CREATE_RATING, payload).then(
                         () => {
+                            this.$swal({
+                                text: 'Ratings successful',
+                                icon: 'success',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                            });
                             this.getRatings();
                         }
                     ).catch(() => {
-                        alert("User already rated this agent");
+                        // alert("User already rated this agent");
+                        this.$swal({
+                            text: 'User already rated this agent',
+                            icon: 'warning',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                        });
                         this.getRatings();
                     });
                 } else {
                     alert("User with agent role cannot rate an agent");
                 }
             } else {
-                this.$router.push({ name: 'login' });
+                this.$refs['my-modal'].show()
             }
         },
         whatsapp(phone) {

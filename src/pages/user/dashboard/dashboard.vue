@@ -5,7 +5,7 @@
         </div>
         <b-container class="mt-5 p-5">
             <b-row md="12">
-                <b-col md="4">
+                <b-col md="3">
                     <b-link :to="{name:'userProperty'}">
                         <b-card class="card-design">
                             <div style="font-size:100px"><b-icon-heart></b-icon-heart></div>
@@ -14,7 +14,7 @@
                         </b-card>
                     </b-link>
                 </b-col>
-                <b-col md="4">
+                <b-col md="3">
                     <b-link :to="{name:'userProfile'}">
                         <b-card class="card-design">
                             <div style="font-size:100px"><b-icon-person></b-icon-person></div>
@@ -23,7 +23,16 @@
                         </b-card>
                     </b-link>
                 </b-col>
-                <b-col md="4">
+                <b-col md="3">
+                    <b-link :to="{name:'properties'}">
+                        <b-card class="card-design">
+                            <div style="font-size:100px"><b-icon-house></b-icon-house></div>
+                            <h5>Properties</h5>
+                            <p>View properties</p> 
+                        </b-card>
+                    </b-link>
+                </b-col>
+                <b-col md="3">
                     <b-link :to="{name:'userPassword'}">
                         <b-card class="card-design">
                             <div style="font-size:100px"><b-icon-lock></b-icon-lock></div>
@@ -32,6 +41,7 @@
                         </b-card>
                     </b-link>
                 </b-col>
+                
             </b-row>
         </b-container>
     </div>

@@ -34,6 +34,13 @@ export default {
         removeHouse(id) {
             this.$store.dispatch(REMOVE_USER_HOUSES, id).then(
                 () => {
+                    this.$swal({
+                        text: 'Property successfully removed from favourite list',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                    });
                     this.getUserHouses();
                 }).catch()
         }
