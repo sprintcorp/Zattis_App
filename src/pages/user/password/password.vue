@@ -1,7 +1,7 @@
 <template>
     <div class="body">
          <div class="header p-2 pl-5">
-            <div class="h6" style="color:black"><b-icon-house></b-icon-house> John Doe - Security Settings</div>
+            <div class="h6" style="color:black"><b-icon-house></b-icon-house> {{ name }} - Security Settings</div>
         </div>
          <b-container class="mt-5 p-3">
             <b-card style="width:100%">

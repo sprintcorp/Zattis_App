@@ -32,7 +32,7 @@
                                     tag="article"
                                     style="max-width: 20rem;border:0px"
                                     class="m-3"
-                                    v-scroll-reveal                                
+                                                                    
                                 >
                                     <b-card-text>
                                         

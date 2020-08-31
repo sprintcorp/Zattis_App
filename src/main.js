@@ -12,6 +12,7 @@ import VueScrollReveal from 'vue-scroll-reveal';
 import * as VueGoogleMaps from 'vue2-google-maps'
 import store from './store';
 import { componentRegistry } from "./registry/registry";
+
 // import AOS from 'aos';
 // import "aos/dist/aos.css";
 

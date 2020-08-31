@@ -10,6 +10,7 @@
         <b-sidebar id="sidebar-1" :title=name shadow>
             <div class="px-3 py-2">
                 <b-img :src=image  height="200" width="287"></b-img>
+                
                 <b-list-group flush class="">
                             <b-list-group-item class="h4" :to="{name:'user'}"><b-icon-box></b-icon-box> Dashboard</b-list-group-item>
                              <b-list-group-item class="h4" :to="{name:'userProperty'}"><b-icon-heart-fill></b-icon-heart-fill> My Property</b-list-group-item>

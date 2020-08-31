@@ -18,12 +18,12 @@
                         </template>
 
                         <b-card-body>
-                        <b-card-title>Contact information</b-card-title>
-                        <!-- <b-card-sub-title class="mb-2">Card Sub Title</b-card-sub-title>
-                        <b-card-text>
-                            Some quick example text to build on the card title and make up the bulk of the card's
-                            content.
-                        </b-card-text> -->
+                            <b-card-text>
+                            <star-rating v-model="info" @rating-selected="setRating"></star-rating>
+                        </b-card-text>
+                        <!-- <b-card-title>Contact information</b-card-title> -->
+                        <!-- <b-card-sub-title class="mb-2">Card Sub Title</b-card-sub-title> -->
+                        
                         </b-card-body>
 
                         <b-list-group flush>
@@ -33,15 +33,18 @@
                         </b-list-group>
 
                         <b-card-body>
-                        <a href="#" class="card-link">Whatsapp</a>
-                        <a href="#" class="card-link">Send mail</a>
+                        <b-link @click="whatsapp(agent.phone)" class="card-link">Whatsapp</b-link>
+                       
+                        <a :href=mailto+agent.email class="card-link">Send mail</a>
                         </b-card-body>
 
-                        <b-card-footer>Zattis Properties</b-card-footer>
+                        <b-card-footer>Homin Properties</b-card-footer>
 
                     </b-card>
                     </div>     
                 </b-col> 
+
+    <!-- <pre>{{info.data}}</pre> -->
 
                 <b-col sm="12" md="9">
                     <div class="h4">{{ agent.firstname }} {{agent.lastname}} Properties</div>

@@ -2,7 +2,7 @@
     <div class="body">
         <div v-if="!loading">
             <div class="header p-2 pl-5">
-                <div class="h6" style="color:black"><b-icon-house></b-icon-house> John Doe - My Profile</div>
+                <div class="h6" style="color:black"><b-icon-house></b-icon-house> {{ name }} - My Profile</div>
             </div>
             <b-container  class="mt-5 p-3">
                 <!-- {{ profile_image }} -->

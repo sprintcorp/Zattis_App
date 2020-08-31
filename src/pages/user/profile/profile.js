@@ -1,4 +1,5 @@
 import { GET_USER, UPDATE_USER } from "../../../store/action"
+import { getFirstname, getLastname } from "../../../config";
 import { mapGetters } from "vuex"
 
 export default {
@@ -13,7 +14,9 @@ export default {
                 address: "",
                 phone: "",
                 email: ""
-            }
+            },
+            name: ''
+
         }
     },
     methods: {
@@ -59,12 +62,16 @@ export default {
             this.$store.dispatch(UPDATE_USER, formData).then(
                 () => {
                     this.saving = false;
+                    location.reload();
                 }
             ).catch(
                 () => {
                     this.saving = false;
                 }
             );
+        },
+        getName() {
+            this.name = getFirstname() + " " + getLastname();
         }
     },
     computed: {
@@ -73,5 +80,8 @@ export default {
     mounted() {
         // alert("hello");
         this.getUserInformation();
+
+        this.getName()
+
     }
 }

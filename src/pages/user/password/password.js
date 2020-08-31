@@ -1,3 +1,4 @@
+import { getFirstname, getLastname } from "../../../config";
 import { UPDATE_PASSWORD } from "../../../store/action";
 
 export default {
@@ -8,7 +9,8 @@ export default {
             confirm_password: "",
             disabled: true,
             loading: false,
-            toast: false
+            toast: false,
+            name: ''
         }
     },
     watch: {
@@ -24,6 +26,9 @@ export default {
 
     },
     methods: {
+        getName() {
+            this.name = getFirstname() + " " + getLastname();
+        },
         checkPasswordMatch() {
             if (this.new_password == this.confirm_password) {
                 this.disabled = false;
@@ -55,5 +60,8 @@ export default {
                 })
             });
         }
+    },
+    mounted() {
+        this.getName()
     }
 }

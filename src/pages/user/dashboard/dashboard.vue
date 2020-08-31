@@ -1,7 +1,7 @@
 <template>
     <div class="body">
         <div class="header p-2   pl-lg-5">
-            <div class="h6" style="color:black"><b-icon-house></b-icon-house> Welcome John Doe - Home</div>
+            <div class="h6" style="color:black"><b-icon-house></b-icon-house> Welcome {{ name }} - Home</div>
         </div>
         <b-container class="mt-5 p-5">
             <b-row md="12">

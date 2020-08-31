@@ -2,7 +2,7 @@
     <div class="body">
         
         <div class="header p-2 pl-5">
-            <div class="h6" style="color:black"><b-icon-house></b-icon-house> John Doe - My Saved Property <b-badge>{{houses.length}}</b-badge></div>
+            <div class="h6" style="color:black"><b-icon-house></b-icon-house> {{ name }} - My Saved Property <b-badge>{{houses.length}}</b-badge></div>
         </div>
         <!-- {{ loading }}
         <pre>{{houses}}</pre> -->

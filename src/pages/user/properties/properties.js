@@ -1,17 +1,22 @@
 import { GET_USER_HOUSES, REMOVE_USER_HOUSES } from "../../../store/action"
 import { mapGetters } from "vuex";
+import { getFirstname, getLastname } from "../../../config";
 
 export default {
     data() {
         return {
             loading: false,
             message: "",
+            name: "",
         }
     },
     computed: {
         ...mapGetters(['houses'])
     },
     methods: {
+        getName() {
+            this.name = getFirstname() + " " + getLastname();
+        },
         getUserHouses() {
             this.loading = true;
             this.$store.dispatch(GET_USER_HOUSES).then(
@@ -34,6 +39,7 @@ export default {
         }
     },
     mounted() {
+        this.getName();
         this.getUserHouses();
     }
 }

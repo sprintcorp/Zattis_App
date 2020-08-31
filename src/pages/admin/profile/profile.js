@@ -59,6 +59,7 @@ export default {
             this.$store.dispatch(UPDATE_USER, formData).then(
                 () => {
                     this.saving = false;
+                    location.reload();
                 }
             ).catch(
                 () => {
