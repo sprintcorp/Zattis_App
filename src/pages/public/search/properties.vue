@@ -73,6 +73,17 @@
         </b-col>
       </b-row>
     </div>
+
+    <b-modal ref="my-modal" centered hide-footer hide-header-close hide-header title="">
+                <div class="d-block text-center">
+                    <h5>Only a logged in user can add property to favourite list</h5>
+                </div>
+                <div class="text-center">
+                <b-button class="mt-2 mr-3" variant="outline-danger" @click="hideModal">Close</b-button>
+                
+                <b-button class="mt-2" variant="outline-warning" @click="login">Login</b-button>
+                </div>
+            </b-modal>
   </div>
 </template>
 

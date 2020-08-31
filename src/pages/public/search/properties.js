@@ -17,6 +17,12 @@ export default {
         }
     },
     methods: {
+        hideModal() {
+            this.$refs['my-modal'].hide()
+        },
+        login() {
+            this.$router.push({ name: 'login' });
+        },
         saveHouse(house) {
             if (getToken()) {
                 const payload = {
@@ -24,7 +30,7 @@ export default {
                 }
                 this.$store.dispatch(SAVE_USER_HOUSES, payload);
             } else {
-                this.$router.push({ name: 'login' });
+                this.$refs['my-modal'].show()
             }
         },
         getHouses(payload) {
