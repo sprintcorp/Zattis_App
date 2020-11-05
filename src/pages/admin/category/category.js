@@ -83,8 +83,10 @@ export default {
     },
     computed: {
         ...mapGetters(['categories'])
+
     },
     mounted() {
         this.getCategories();
+
     }
 }
